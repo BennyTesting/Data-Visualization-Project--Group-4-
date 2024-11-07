@@ -30,7 +30,6 @@ Syphilis,2017,Sweden,385
 Syphilis,2017,Slovenia,48
 Syphilis,2017,Slovakia,379
 Syphilis,2017,United Kingdom,7798
-Gonorrhoea,2017,Albania,0
 Gonorrhoea,2017,Belgium,2271
 Gonorrhoea,2017,Bulgaria,67
 Gonorrhoea,2017,Cyprus,2
@@ -65,7 +64,6 @@ Gonorrhoea,2017,Slovenia,113
 Gonorrhoea,2017,Slovakia,385
 Gonorrhoea,2017,Turkey,131
 Gonorrhoea,2017,United Kingdom,49156
-Gonorrhoea,2017,Kosovo,0
 Hepatitis B,2017,Austria,657
 Hepatitis B,2017,Cyprus,33
 Hepatitis B,2017,Czechia,226
@@ -85,7 +83,6 @@ Hepatitis B,2017,Netherlands,1092
 Hepatitis B,2017,Norway,458
 Hepatitis B,2017,Poland,887
 Hepatitis B,2017,Portugal,79
-Hepatitis B,2017,Romania,0
 Hepatitis B,2017,Sweden,1120
 Hepatitis B,2017,Slovenia,37
 Hepatitis B,2017,Slovakia,90
@@ -103,7 +100,6 @@ Hepatitis C,2017,EU/EEA (with UK),9970
 Hepatitis C,2017,Croatia,1
 Hepatitis C,2017,Ireland,99
 Hepatitis C,2017,Iceland,57
-Hepatitis C,2017,Luxembourg,0
 Hepatitis C,2017,Latvia,1652
 Hepatitis C,2017,Malta,5
 Hepatitis C,2017,Poland,750
@@ -193,13 +189,11 @@ AIDS infection,2017,France,392
 AIDS infection,2017,Croatia,20
 AIDS infection,2017,Hungary,52
 AIDS infection,2017,Ireland,16
-AIDS infection,2017,Iceland,0
 AIDS infection,2017,Italy,690
 AIDS infection,2017,Lithuania,54
 AIDS infection,2017,Luxembourg,6
 AIDS infection,2017,Latvia,118
 AIDS infection,2017,Montenegro,13
-AIDS infection,2017,Malta,0
 AIDS infection,2017,Netherlands,115
 AIDS infection,2017,Norway,14
 AIDS infection,2017,Poland,101
@@ -313,10 +307,8 @@ Hepatitis C,2018,EU/EEA (without UK),8653
 Hepatitis C,2018,EU/EEA (with UK),10143
 Hepatitis C,2018,Croatia,37
 Hepatitis C,2018,Ireland,106
-Hepatitis C,2018,Iceland,0
 Hepatitis C,2018,Luxembourg,69
 Hepatitis C,2018,Latvia,1418
-Hepatitis C,2018,Malta,0
 Hepatitis C,2018,Poland,585
 Hepatitis C,2018,Portugal,79
 Hepatitis C,2018,Romania,3
@@ -369,7 +361,6 @@ HIV infection,2018,Iceland,37
 HIV infection,2018,Ireland,504
 HIV infection,2018,Italy,2847
 HIV infection,2018,Latvia,326
-HIV infection,2018,Liechtenstein,0
 HIV infection,2018,Lithuania,160
 HIV infection,2018,Luxembourg,56
 HIV infection,2018,Malta,73
@@ -394,20 +385,15 @@ HIV infection,2018,Israel,447
 HIV infection,2018,Kazakhstan,3216
 HIV infection,2018,Kyrgyzstan,876
 HIV infection,2018,Moldova,905
-HIV infection,2018,Monaco,0
 HIV infection,2018,Montenegro,23
 HIV infection,2018,North Macedonia,45
-HIV infection,2018,Russia,0
 HIV infection,2018,San Marino,3
 HIV infection,2018,Serbia,186
 HIV infection,2018,Serbia excluding Kosovo,178
 HIV infection,2018,Kosovo,8
 HIV infection,2018,Switzerland,423
-HIV infection,2018,Tajikistan,0
 HIV infection,2018,Turkey,3248
-HIV infection,2018,Turkmenistan,0
 HIV infection,2018,Ukraine,15749
-HIV infection,2018,Uzbekistan,0
 AIDS infection,2018,Austria,50
 AIDS infection,2018,Belgium,49
 AIDS infection,2018,Bulgaria,57
@@ -425,10 +411,8 @@ AIDS infection,2018,Iceland,1
 AIDS infection,2018,Ireland,10
 AIDS infection,2018,Italy,661
 AIDS infection,2018,Latvia,99
-AIDS infection,2018,Liechtenstein,0
 AIDS infection,2018,Lithuania,37
 AIDS infection,2018,Luxembourg,4
-AIDS infection,2018,Malta,0
 AIDS infection,2018,Netherlands,119
 AIDS infection,2018,Norway,12
 AIDS infection,2018,Poland,101
@@ -437,10 +421,8 @@ AIDS infection,2018,Romania,290
 AIDS infection,2018,Slovakia,11
 AIDS infection,2018,Slovenia,10
 AIDS infection,2018,Spain,367
-AIDS infection,2018,Sweden,0
 AIDS infection,2018,United Kingdom,255
 AIDS infection,2018,Albania,47
-AIDS infection,2018,Andorra,0
 AIDS infection,2018,Armenia,211
 AIDS infection,2018,Azerbaijan,182
 AIDS infection,2018,Belarus,382
@@ -450,20 +432,13 @@ AIDS infection,2018,Israel,31
 AIDS infection,2018,Kazakhstan,430
 AIDS infection,2018,Kyrgyzstan,56
 AIDS infection,2018,Moldova,364
-AIDS infection,2018,Monaco,0
 AIDS infection,2018,Montenegro,14
 AIDS infection,2018,North Macedonia,4
-AIDS infection,2018,Russia,0
-AIDS infection,2018,San Marino,0
-AIDS infection,2018,Serbia,0
 AIDS infection,2018,Serbia excluding Kosovo,62
 AIDS infection,2018,Kosovo,8
 AIDS infection,2018,Switzerland,47
-AIDS infection,2018,Tajikistan,0
 AIDS infection,2018,Turkey,108
-AIDS infection,2018,Turkmenistan,0
 AIDS infection,2018,Ukraine,8839
-AIDS infection,2018,Uzbekistan,0
 Syphilis,2019,Belgium,1670
 Syphilis,2019,Bulgaria,480
 Syphilis,2019,Cyprus,31
@@ -495,7 +470,6 @@ Syphilis,2019,Sweden,431
 Syphilis,2019,Slovenia,54
 Syphilis,2019,Slovakia,278
 Syphilis,2019,United Kingdom,8738
-Gonorrhoea,2019,Albania,0
 Gonorrhoea,2019,Belgium,2635
 Gonorrhoea,2019,Bulgaria,22
 Gonorrhoea,2019,Cyprus,2
@@ -544,7 +518,6 @@ Hepatitis B,2019,Ireland,427
 Hepatitis B,2019,Iceland,47
 Hepatitis B,2019,Luxembourg,52
 Hepatitis B,2019,Latvia,266
-Hepatitis B,2019,Malta,0
 Hepatitis B,2019,Netherlands,1041
 Hepatitis B,2019,Norway,370
 Hepatitis B,2019,Poland,669
@@ -566,10 +539,7 @@ Hepatitis C,2019,EU/EEA (without UK),8054
 Hepatitis C,2019,EU/EEA (with UK),8905
 Hepatitis C,2019,Croatia,89
 Hepatitis C,2019,Ireland,94
-Hepatitis C,2019,Iceland,0
-Hepatitis C,2019,Luxembourg,0
 Hepatitis C,2019,Latvia,1336
-Hepatitis C,2019,Malta,0
 Hepatitis C,2019,Poland,501
 Hepatitis C,2019,Portugal,71
 Hepatitis C,2019,Romania,4
@@ -606,7 +576,6 @@ Chlamydia infection,2019,Slovenia,397
 Chlamydia infection,2019,Slovakia,780
 Chlamydia infection,2019,United Kingdom,258904
 HIV infection,2019,Austria,225
-HIV infection,2019,Belgium,0
 HIV infection,2019,Bulgaria,258
 HIV infection,2019,Croatia,102
 HIV infection,2019,Cyprus,100
@@ -622,7 +591,6 @@ HIV infection,2019,Iceland,28
 HIV infection,2019,Ireland,533
 HIV infection,2019,Italy,2531
 HIV infection,2019,Latvia,295
-HIV infection,2019,Liechtenstein,0
 HIV infection,2019,Lithuania,151
 HIV infection,2019,Luxembourg,48
 HIV infection,2019,Malta,80
@@ -637,7 +605,6 @@ HIV infection,2019,Spain,2483
 HIV infection,2019,Sweden,449
 HIV infection,2019,United Kingdom,4116
 HIV infection,2019,Albania,101
-HIV infection,2019,Andorra,0
 HIV infection,2019,Armenia,446
 HIV infection,2019,Azerbaijan,721
 HIV infection,2019,Belarus,2137
@@ -646,23 +613,17 @@ HIV infection,2019,Georgia,668
 HIV infection,2019,Israel,408
 HIV infection,2019,Kazakhstan,3673
 HIV infection,2019,Kyrgyzstan,850
-HIV infection,2019,Monaco,0
 HIV infection,2019,Montenegro,26
-HIV infection,2019,North Macedonia,0
 HIV infection,2019,Moldova,922
 HIV infection,2019,Russia,80124
-HIV infection,2019,San Marino,0
 HIV infection,2019,Serbia,215
 HIV infection,2019,Serbia excluding Kosovo,210
 HIV infection,2019,Kosovo,5
 HIV infection,2019,Switzerland,421
 HIV infection,2019,Tajikistan,1320
 HIV infection,2019,Turkey,3229
-HIV infection,2019,Turkmenistan,0
 HIV infection,2019,Ukraine,16357
-HIV infection,2019,Uzbekistan,0
 AIDS infection,2019,Austria,56
-AIDS infection,2019,Belgium,0
 AIDS infection,2019,Bulgaria,68
 AIDS infection,2019,Croatia,20
 AIDS infection,2019,Cyprus,3
@@ -678,10 +639,8 @@ AIDS infection,2019,Iceland,4
 AIDS infection,2019,Ireland,6
 AIDS infection,2019,Italy,571
 AIDS infection,2019,Latvia,90
-AIDS infection,2019,Liechtenstein,0
 AIDS infection,2019,Lithuania,21
 AIDS infection,2019,Luxembourg,3
-AIDS infection,2019,Malta,0
 AIDS infection,2019,Netherlands,93
 AIDS infection,2019,Norway,19
 AIDS infection,2019,Poland,85
@@ -690,10 +649,8 @@ AIDS infection,2019,Romania,282
 AIDS infection,2019,Slovakia,3
 AIDS infection,2019,Slovenia,7
 AIDS infection,2019,Spain,251
-AIDS infection,2019,Sweden,0
 AIDS infection,2019,United Kingdom,269
 AIDS infection,2019,Albania,40
-AIDS infection,2019,Andorra,0
 AIDS infection,2019,Armenia,173
 AIDS infection,2019,Azerbaijan,196
 AIDS infection,2019,Belarus,380
@@ -702,21 +659,14 @@ AIDS infection,2019,Georgia,265
 AIDS infection,2019,Israel,23
 AIDS infection,2019,Kazakhstan,441
 AIDS infection,2019,Kyrgyzstan,46
-AIDS infection,2019,Monaco,0
 AIDS infection,2019,Montenegro,10
-AIDS infection,2019,North Macedonia,0
 AIDS infection,2019,Moldova,285
-AIDS infection,2019,Russia,0
-AIDS infection,2019,San Marino,0
-AIDS infection,2019,Serbia,0
 AIDS infection,2019,Serbia excluding Kosovo,68
 AIDS infection,2019,Kosovo,5
 AIDS infection,2019,Switzerland,59
 AIDS infection,2019,Tajikistan,141
 AIDS infection,2019,Turkey,112
-AIDS infection,2019,Turkmenistan,0
 AIDS infection,2019,Ukraine,7511
-AIDS infection,2019,Uzbekistan,0
 Syphilis,2020,Belgium,1407
 Syphilis,2020,Bulgaria,319
 Syphilis,2020,Cyprus,43
@@ -748,7 +698,6 @@ Syphilis,2020,Romania,296
 Syphilis,2020,Sweden,473
 Syphilis,2020,Slovenia,31
 Syphilis,2020,Slovakia,160
-Gonorrhoea,2020,Albania,0
 Gonorrhoea,2020,Belgium,1707
 Gonorrhoea,2020,Bulgaria,17
 Gonorrhoea,2020,Cyprus,7
@@ -770,7 +719,6 @@ Gonorrhoea,2020,Liechtenstein,4
 Gonorrhoea,2020,Lithuania,31
 Gonorrhoea,2020,Luxembourg,311
 Gonorrhoea,2020,Latvia,109
-Gonorrhoea,2020,Montenegro,0
 Gonorrhoea,2020,North Macedonia,23
 Gonorrhoea,2020,Malta,94
 Gonorrhoea,2020,Netherlands,6826
@@ -797,14 +745,11 @@ Hepatitis B,2020,Croatia,7
 Hepatitis B,2020,Ireland,254
 Hepatitis B,2020,Iceland,32
 Hepatitis B,2020,Lithuania,15
-Hepatitis B,2020,Luxembourg,0
 Hepatitis B,2020,Latvia,210
-Hepatitis B,2020,Malta,0
 Hepatitis B,2020,Netherlands,695
 Hepatitis B,2020,Norway,221
 Hepatitis B,2020,Poland,156
 Hepatitis B,2020,Portugal,46
-Hepatitis B,2020,Romania,0
 Hepatitis B,2020,Sweden,679
 Hepatitis B,2020,Slovenia,26
 Hepatitis B,2020,Slovakia,71
@@ -820,14 +765,10 @@ Hepatitis C,2020,EU/EEA (without UK),5416
 Hepatitis C,2020,EU/EEA (with UK),5416
 Hepatitis C,2020,Croatia,41
 Hepatitis C,2020,Ireland,25
-Hepatitis C,2020,Iceland,0
 Hepatitis C,2020,Lithuania,65
-Hepatitis C,2020,Luxembourg,0
 Hepatitis C,2020,Latvia,1038
-Hepatitis C,2020,Malta,0
 Hepatitis C,2020,Poland,102
 Hepatitis C,2020,Portugal,41
-Hepatitis C,2020,Romania,0
 Hepatitis C,2020,Sweden,672
 Hepatitis C,2020,Slovenia,44
 Hepatitis C,2020,Slovakia,188
@@ -876,45 +817,36 @@ HIV infection,2020,Iceland,34
 HIV infection,2020,Ireland,429
 HIV infection,2020,Italy,1303
 HIV infection,2020,Latvia,257
-HIV infection,2020,Liechtenstein,0
 HIV infection,2020,Lithuania,108
 HIV infection,2020,Luxembourg,44
 HIV infection,2020,Malta,82
 HIV infection,2020,Netherlands,396
 HIV infection,2020,Norway,137
 HIV infection,2020,Poland,709
-HIV infection,2020,Portugal,0
 HIV infection,2020,Romania,447
 HIV infection,2020,Slovakia,102
 HIV infection,2020,Slovenia,27
 HIV infection,2020,Spain,1884
 HIV infection,2020,Sweden,360
 HIV infection,2020,Albania,96
-HIV infection,2020,Andorra,0
 HIV infection,2020,Armenia,369
 HIV infection,2020,Azerbaijan,559
 HIV infection,2020,Belarus,1427
-HIV infection,2020,Bosnia and Herzegovina,0
 HIV infection,2020,Georgia,530
 HIV infection,2020,Israel,363
 HIV infection,2020,Kazakhstan,3472
 HIV infection,2020,Kyrgyzstan,676
 HIV infection,2020,Moldova,675
-HIV infection,2020,Monaco,0
 HIV infection,2020,Montenegro,15
-HIV infection,2020,North Macedonia,0
 HIV infection,2020,Russia,59598
-HIV infection,2020,San Marino,0
 HIV infection,2020,Serbia,123
 HIV infection,2020,Serbia excluding Kosovo,121
 HIV infection,2020,Kosovo,2
 HIV infection,2020,Switzerland,288
 HIV infection,2020,Tajikistan,1084
 HIV infection,2020,Turkey,2076
-HIV infection,2020,Turkmenistan,0
 HIV infection,2020,Ukraine,15658
 HIV infection,2020,United Kingdom,2785
-HIV infection,2020,Uzbekistan,0
 AIDS infection,2020,Austria,43
 AIDS infection,2020,Belgium,40
 AIDS infection,2020,Bulgaria,43
@@ -925,52 +857,38 @@ AIDS infection,2020,Denmark,25
 AIDS infection,2020,Estonia,23
 AIDS infection,2020,Finland,12
 AIDS infection,2020,France,388
-AIDS infection,2020,Germany,0
 AIDS infection,2020,Greece,100
 AIDS infection,2020,Hungary,42
 AIDS infection,2020,Iceland,2
 AIDS infection,2020,Ireland,6
 AIDS infection,2020,Italy,352
 AIDS infection,2020,Latvia,55
-AIDS infection,2020,Liechtenstein,0
 AIDS infection,2020,Lithuania,15
 AIDS infection,2020,Luxembourg,5
-AIDS infection,2020,Malta,0
 AIDS infection,2020,Netherlands,115
 AIDS infection,2020,Norway,11
 AIDS infection,2020,Poland,34
-AIDS infection,2020,Portugal,0
 AIDS infection,2020,Romania,166
 AIDS infection,2020,Slovakia,4
 AIDS infection,2020,Slovenia,6
 AIDS infection,2020,Spain,200
-AIDS infection,2020,Sweden,0
 AIDS infection,2020,Albania,15
-AIDS infection,2020,Andorra,0
 AIDS infection,2020,Armenia,152
 AIDS infection,2020,Azerbaijan,105
 AIDS infection,2020,Belarus,220
-AIDS infection,2020,Bosnia and Herzegovina,0
 AIDS infection,2020,Georgia,181
 AIDS infection,2020,Israel,29
 AIDS infection,2020,Kazakhstan,469
 AIDS infection,2020,Kyrgyzstan,46
 AIDS infection,2020,Moldova,194
-AIDS infection,2020,Monaco,0
 AIDS infection,2020,Montenegro,4
-AIDS infection,2020,North Macedonia,0
-AIDS infection,2020,Russia,0
-AIDS infection,2020,San Marino,0
-AIDS infection,2020,Serbia,0
 AIDS infection,2020,Serbia excluding Kosovo,32
 AIDS infection,2020,Kosovo,2
 AIDS infection,2020,Switzerland,33
 AIDS infection,2020,Tajikistan,106
 AIDS infection,2020,Turkey,46
-AIDS infection,2020,Turkmenistan,0
 AIDS infection,2020,Ukraine,4139
 AIDS infection,2020,United Kingdom,188
-AIDS infection,2020,Uzbekistan,0
 Syphilis,2021,Belgium,2113
 Syphilis,2021,Bulgaria,271
 Syphilis,2021,Cyprus,92
@@ -1002,7 +920,6 @@ Syphilis,2021,Romania,318
 Syphilis,2021,Sweden,583
 Syphilis,2021,Slovenia,37
 Syphilis,2021,Slovakia,289
-Gonorrhoea,2021,Albania,0
 Gonorrhoea,2021,Belgium,3964
 Gonorrhoea,2021,Bulgaria,3
 Gonorrhoea,2021,Cyprus,5
@@ -1024,7 +941,6 @@ Gonorrhoea,2021,Liechtenstein,5
 Gonorrhoea,2021,Lithuania,30
 Gonorrhoea,2021,Luxembourg,417
 Gonorrhoea,2021,Latvia,70
-Gonorrhoea,2021,Montenegro,0
 Gonorrhoea,2021,North Macedonia,11
 Gonorrhoea,2021,Malta,240
 Gonorrhoea,2021,Netherlands,7966
@@ -1036,7 +952,6 @@ Gonorrhoea,2021,Serbia,106
 Gonorrhoea,2021,Sweden,2693
 Gonorrhoea,2021,Slovenia,292
 Gonorrhoea,2021,Slovakia,414
-Gonorrhoea,2021,Kosovo,0
 Hepatitis B,2021,Austria,376
 Hepatitis B,2021,Cyprus,17
 Hepatitis B,2021,Czechia,151
@@ -1052,14 +967,10 @@ Hepatitis B,2021,Ireland,355
 Hepatitis B,2021,Iceland,30
 Hepatitis B,2021,Liechtenstein,2
 Hepatitis B,2021,Lithuania,18
-Hepatitis B,2021,Luxembourg,0
 Hepatitis B,2021,Latvia,211
-Hepatitis B,2021,Malta,0
 Hepatitis B,2021,Netherlands,734
 Hepatitis B,2021,Norway,253
-Hepatitis B,2021,Poland,0
 Hepatitis B,2021,Portugal,66
-Hepatitis B,2021,Romania,0
 Hepatitis B,2021,Sweden,645
 Hepatitis B,2021,Slovenia,32
 Hepatitis B,2021,Slovakia,67
@@ -1075,14 +986,9 @@ Hepatitis C,2021,EU/EEA (without UK),5503
 Hepatitis C,2021,EU/EEA (with UK),5503
 Hepatitis C,2021,Croatia,45
 Hepatitis C,2021,Ireland,45
-Hepatitis C,2021,Iceland,0
 Hepatitis C,2021,Lithuania,57
-Hepatitis C,2021,Luxembourg,0
 Hepatitis C,2021,Latvia,925
-Hepatitis C,2021,Malta,0
-Hepatitis C,2021,Poland,0
 Hepatitis C,2021,Portugal,58
-Hepatitis C,2021,Romania,0
 Hepatitis C,2021,Sweden,675
 Hepatitis C,2021,Slovenia,28
 Hepatitis C,2021,Slovakia,173
@@ -1139,38 +1045,30 @@ HIV infection,2021,Malta,45
 HIV infection,2021,Netherlands,396
 HIV infection,2021,Norway,102
 HIV infection,2021,Poland,1096
-HIV infection,2021,Portugal,0
 HIV infection,2021,Romania,560
 HIV infection,2021,Slovakia,113
 HIV infection,2021,Slovenia,32
 HIV infection,2021,Spain,2785
 HIV infection,2021,Sweden,352
 HIV infection,2021,Albania,104
-HIV infection,2021,Andorra,0
 HIV infection,2021,Armenia,425
 HIV infection,2021,Azerbaijan,690
 HIV infection,2021,Belarus,1496
-HIV infection,2021,Bosnia and Herzegovina,0
 HIV infection,2021,Georgia,530
 HIV infection,2021,Israel,404
 HIV infection,2021,Kazakhstan,3591
 HIV infection,2021,Kyrgyzstan,845
-HIV infection,2021,Monaco,0
 HIV infection,2021,Montenegro,13
-HIV infection,2021,North Macedonia,0
 HIV infection,2021,Moldova,792
 HIV infection,2021,Russia,58340
-HIV infection,2021,San Marino,0
 HIV infection,2021,Serbia,181
 HIV infection,2021,Serbia excluding Kosovo,172
 HIV infection,2021,Kosovo,9
 HIV infection,2021,Switzerland,315
 HIV infection,2021,Tajikistan,922
 HIV infection,2021,Turkey,2922
-HIV infection,2021,Turkmenistan,0
 HIV infection,2021,Ukraine,15360
 HIV infection,2021,United Kingdom,2955
-HIV infection,2021,Uzbekistan,0
 AIDS infection,2021,Austria,53
 AIDS infection,2021,Belgium,61
 AIDS infection,2021,Bulgaria,38
@@ -1181,49 +1079,35 @@ AIDS infection,2021,Denmark,17
 AIDS infection,2021,Estonia,12
 AIDS infection,2021,Finland,16
 AIDS infection,2021,France,417
-AIDS infection,2021,Germany,0
 AIDS infection,2021,Greece,81
 AIDS infection,2021,Hungary,48
 AIDS infection,2021,Iceland,2
 AIDS infection,2021,Ireland,10
 AIDS infection,2021,Italy,382
 AIDS infection,2021,Latvia,39
-AIDS infection,2021,Liechtenstein,0
 AIDS infection,2021,Lithuania,38
 AIDS infection,2021,Luxembourg,10
-AIDS infection,2021,Malta,0
 AIDS infection,2021,Netherlands,107
 AIDS infection,2021,Norway,23
 AIDS infection,2021,Poland,44
-AIDS infection,2021,Portugal,0
 AIDS infection,2021,Romania,191
 AIDS infection,2021,Slovakia,3
 AIDS infection,2021,Slovenia,5
 AIDS infection,2021,Spain,185
-AIDS infection,2021,Sweden,0
 AIDS infection,2021,Albania,44
-AIDS infection,2021,Andorra,0
 AIDS infection,2021,Armenia,197
 AIDS infection,2021,Azerbaijan,109
 AIDS infection,2021,Belarus,286
-AIDS infection,2021,Bosnia and Herzegovina,0
 AIDS infection,2021,Georgia,217
 AIDS infection,2021,Israel,32
 AIDS infection,2021,Kazakhstan,468
 AIDS infection,2021,Kyrgyzstan,110
-AIDS infection,2021,Monaco,0
 AIDS infection,2021,Montenegro,8
-AIDS infection,2021,North Macedonia,0
 AIDS infection,2021,Moldova,199
-AIDS infection,2021,Russia,0
-AIDS infection,2021,San Marino,0
-AIDS infection,2021,Serbia,0
 AIDS infection,2021,Serbia excluding Kosovo,49
 AIDS infection,2021,Kosovo,3
 AIDS infection,2021,Switzerland,34
 AIDS infection,2021,Tajikistan,127
 AIDS infection,2021,Turkey,80
-AIDS infection,2021,Turkmenistan,0
 AIDS infection,2021,Ukraine,4151
 AIDS infection,2021,United Kingdom,185
-AIDS infection,2021,Uzbekistan,0

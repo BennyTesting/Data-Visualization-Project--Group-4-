@@ -111,18 +111,18 @@ d3.csv("Disease_By_Year.csv").then(data => {
     }
 
     function showDetailChart(healthTopic, year) {
-        d3.csv("BarChart2.csv").then(barData => {
+        d3.csv("BarChart.csv").then(barData => {
             barData.forEach(d => {
                 d.Value = +d.Value || 0; 
                 d.Time = +d.Time; 
             });
-
+    
             const detailData = barData.filter(d => d.HealthTopic === healthTopic && d.Time === year);
-
+    
             detailContainer.style("display", "block");
-
+    
             detailSvg.selectAll(".year-label").remove();
-
+    
             detailSvg.append("text")
                 .attr("class", "year-label")
                 .attr("x", detailWidth / 2)
@@ -139,21 +139,22 @@ d3.csv("Disease_By_Year.csv").then(data => {
                 .enter().append("tspan")
                 .attr("font-weight", d => d.bold ? "bold" : "normal")
                 .text(d => d.text)
-
+    
             detailX.domain([0, d3.max(detailData, d => d.Value) * 1.5]);
             detailY.domain(detailData.map(d => d.RegionName)); 
-
+    
             const detailBars = detailSvg.selectAll(".detail-bar").data(detailData, d => d.RegionName);
-
+    
             detailBars.exit().remove();
-
+    
+            // Create/update the bars
             detailBars
                 .transition().duration(500)
                 .attr("x", 0)
                 .attr("y", d => detailY(d.RegionName))
                 .attr("width", d => detailX(d.Value))
                 .attr("height", detailY.bandwidth());
-
+    
             detailBars.enter().append("rect")
                 .attr("class", "detail-bar")
                 .attr("x", 0)
@@ -164,11 +165,37 @@ d3.csv("Disease_By_Year.csv").then(data => {
                 .transition().duration(500)
                 .attr("y", d => detailY(d.RegionName))
                 .attr("width", d => detailX(d.Value));
-
+    
+            // Add text labels next to the bars
+            const detailLabels = detailSvg.selectAll(".detail-label").data(detailData, d => d.RegionName);
+    
+            detailLabels.exit().remove();
+    
+            // Create/update the text labels
+            detailLabels
+                .transition().duration(500)
+                .attr("x", d => detailX(d.Value) + 5) // Position the text slightly to the right of the bar
+                .attr("y", d => detailY(d.RegionName) + detailY.bandwidth() / 2)
+                .attr("dy", ".35em")  // Vertically center the text
+                .style("font-size", "12px")
+                .style("fill", "black")
+                .text(d => d.Value);
+    
+            // Enter new labels
+            detailLabels.enter().append("text")
+                .attr("class", "detail-label")
+                .attr("x", d => detailX(d.Value) + 5) // Position the text slightly to the right of the bar
+                .attr("y", d => detailY(d.RegionName) + detailY.bandwidth() / 2)
+                .attr("dy", ".35em")  // Vertically center the text
+                .style("font-size", "12px")
+                .style("fill", "black")
+                .text(d => d.Value);
+    
             detailXAxis.transition().duration(500).call(d3.axisBottom(detailX).ticks(15));
             detailYAxis.transition().duration(500).call(d3.axisLeft(detailY));
         });
     }
+    
 
     // Select all buttons and add click event
     d3.selectAll("button").on("click", function() {

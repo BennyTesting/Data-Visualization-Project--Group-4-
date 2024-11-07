@@ -1,35 +1,35 @@
 HealthTopic,Time,TotalValue
-Syphilis,2017,93788
-Syphilis,2018,94050
-Syphilis,2019,97042
-Syphilis,2020,70506
-Syphilis,2021,81222
-Gonorrhoea,2017,219531
-Gonorrhoea,2018,240972
-Gonorrhoea,2019,276754
-Gonorrhoea,2020,117590
-Gonorrhoea,2021,150078
-Hepatitis B,2017,70552
-Hepatitis B,2018,60772
-Hepatitis B,2019,75132
-Hepatitis B,2020,39528
-Hepatitis B,2021,46458
-Hepatitis C,2017,193244
-Hepatitis C,2018,217216
-Hepatitis C,2019,215204
-Hepatitis C,2020,98046
-Hepatitis C,2021,102306
-Chlamydia infection,2017,1000955
-Chlamydia infection,2018,978482
-Chlamydia infection,2019,1045277
-Chlamydia infection,2020,485973
-Chlamydia infection,2021,565716
-HIV infection,2017,51019
+Syphilis,2017,33862
+Syphilis,2018,34126
+Syphilis,2019,35380
+Syphilis,2020,23502
+Syphilis,2021,27074
+Gonorrhoea,2017,89489
+Gonorrhoea,2018,100857
+Gonorrhoea,2019,117985
+Gonorrhoea,2020,39170
+Gonorrhoea,2021,49987
+Hepatitis B,2017,15545
+Hepatitis B,2018,12752
+Hepatitis B,2019,14602
+Hepatitis B,2020,6458
+Hepatitis B,2021,7367
+Hepatitis C,2017,9970
+Hepatitis C,2018,10143
+Hepatitis C,2019,8905
+Hepatitis C,2020,5416
+Hepatitis C,2021,5503
+Chlamydia infection,2017,410479
+Chlamydia infection,2018,406956
+Chlamydia infection,2019,434727
+Chlamydia infection,2020,161991
+Chlamydia infection,2021,188572
+HIV infection,2017,25696
 HIV infection,2018,55743
 HIV infection,2019,136664
 HIV infection,2020,104888
 HIV infection,2021,106690
-AIDS infection,2017,6372
+AIDS infection,2017,3242
 AIDS infection,2018,14227
 AIDS infection,2019,12535
 AIDS infection,2020,7721
