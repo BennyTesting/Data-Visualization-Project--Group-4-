@@ -8,8 +8,6 @@ Syphilis,2017,Denmark,325
 Syphilis,2017,Estonia,34
 Syphilis,2017,Greece,395
 Syphilis,2017,Spain,4941
-,,,
-,,,
 Syphilis,2017,Finland,175
 Syphilis,2017,France,1748
 Syphilis,2017,Croatia,29
@@ -38,8 +36,7 @@ Gonorrhoea,2017,Denmark,1915
 Gonorrhoea,2017,Estonia,56
 Gonorrhoea,2017,Greece,129
 Gonorrhoea,2017,Spain,8200
-,,,
-,,,
+
 Gonorrhoea,2017,Finland,598
 Gonorrhoea,2017,France,9177
 Gonorrhoea,2017,Croatia,30
@@ -70,8 +67,6 @@ Hepatitis B,2017,Czechia,226
 Hepatitis B,2017,Germany,5
 Hepatitis B,2017,Denmark,255
 Hepatitis B,2017,Estonia,11
-,,,
-,,,
 Hepatitis B,2017,Finland,259
 Hepatitis B,2017,Croatia,4
 Hepatitis B,2017,Ireland,429
@@ -95,8 +90,6 @@ Hepatitis C,2017,Denmark,180
 Hepatitis C,2017,Estonia,115
 Hepatitis C,2017,Greece,148
 Hepatitis C,2017,Spain,131
-,,,
-,,,
 Hepatitis C,2017,Croatia,1
 Hepatitis C,2017,Ireland,99
 Hepatitis C,2017,Iceland,57
@@ -116,8 +109,6 @@ Chlamydia infection,2017,Denmark,32932
 Chlamydia infection,2017,Estonia,1132
 Chlamydia infection,2017,Greece,85
 Chlamydia infection,2017,Spain,9478
-,,,
-,,,
 Chlamydia infection,2017,Finland,14462
 Chlamydia infection,2017,France,17672
 Chlamydia infection,2017,Croatia,194
@@ -149,7 +140,6 @@ HIV infection,2017,Denmark,242
 HIV infection,2017,Estonia,219
 HIV infection,2017,Greece,628
 HIV infection,2017,Spain,3249
-,,,
 HIV infection,2017,Finland,158
 HIV infection,2017,France,5211
 HIV infection,2017,Croatia,106
@@ -183,7 +173,6 @@ AIDS infection,2017,Denmark,28
 AIDS infection,2017,Estonia,20
 AIDS infection,2017,Greece,112
 AIDS infection,2017,Spain,406
-,,,
 AIDS infection,2017,Finland,18
 AIDS infection,2017,France,392
 AIDS infection,2017,Croatia,20
@@ -213,8 +202,6 @@ Syphilis,2018,Denmark,322
 Syphilis,2018,Estonia,27
 Syphilis,2018,Greece,389
 Syphilis,2018,Spain,4826
-,,,
-,,,
 Syphilis,2018,Finland,181
 Syphilis,2018,France,1606
 Syphilis,2018,Croatia,35
@@ -244,8 +231,6 @@ Gonorrhoea,2018,Denmark,2197
 Gonorrhoea,2018,Estonia,53
 Gonorrhoea,2018,Greece,147
 Gonorrhoea,2018,Spain,10505
-,,,
-,,,
 Gonorrhoea,2018,Finland,501
 Gonorrhoea,2018,France,3990
 Gonorrhoea,2018,Croatia,38
@@ -277,8 +262,6 @@ Hepatitis B,2018,Czechia,269
 Hepatitis B,2018,Germany,38
 Hepatitis B,2018,Denmark,155
 Hepatitis B,2018,Estonia,15
-,,,
-,,,
 Hepatitis B,2018,Finland,235
 Hepatitis B,2018,Croatia,46
 Hepatitis B,2018,Ireland,468
@@ -303,8 +286,6 @@ Hepatitis C,2018,Denmark,175
 Hepatitis C,2018,Estonia,144
 Hepatitis C,2018,Greece,124
 Hepatitis C,2018,Spain,764
-,,,
-,,,
 Hepatitis C,2018,Croatia,37
 Hepatitis C,2018,Ireland,106
 Hepatitis C,2018,Luxembourg,69
@@ -323,8 +304,6 @@ Chlamydia infection,2018,Denmark,33415
 Chlamydia infection,2018,Estonia,1013
 Chlamydia infection,2018,Greece,61
 Chlamydia infection,2018,Spain,12847
-,,,
-,,,
 Chlamydia infection,2018,Finland,14839
 Chlamydia infection,2018,Croatia,213
 Chlamydia infection,2018,Hungary,780
@@ -448,8 +427,6 @@ Syphilis,2019,Denmark,361
 Syphilis,2019,Estonia,37
 Syphilis,2019,Greece,443
 Syphilis,2019,Spain,4880
-,,,
-,,,
 Syphilis,2019,Finland,251
 Syphilis,2019,France,1080
 Syphilis,2019,Croatia,28
@@ -478,8 +455,6 @@ Gonorrhoea,2019,Denmark,2210
 Gonorrhoea,2019,Estonia,78
 Gonorrhoea,2019,Greece,201
 Gonorrhoea,2019,Spain,10226
-,,,
-,,,
 Gonorrhoea,2019,Finland,605
 Gonorrhoea,2019,France,3611
 Gonorrhoea,2019,Croatia,40
@@ -510,8 +485,6 @@ Hepatitis B,2019,Czechia,276
 Hepatitis B,2019,Germany,4298
 Hepatitis B,2019,Denmark,164
 Hepatitis B,2019,Estonia,15
-,,,
-,,,
 Hepatitis B,2019,Finland,233
 Hepatitis B,2019,Croatia,40
 Hepatitis B,2019,Ireland,427
@@ -535,8 +508,6 @@ Hepatitis C,2019,Denmark,111
 Hepatitis C,2019,Estonia,133
 Hepatitis C,2019,Greece,22
 Hepatitis C,2019,Spain,741
-,,,
-,,,
 Hepatitis C,2019,Croatia,89
 Hepatitis C,2019,Ireland,94
 Hepatitis C,2019,Latvia,1336
@@ -554,8 +525,6 @@ Chlamydia infection,2019,Denmark,35680
 Chlamydia infection,2019,Estonia,1064
 Chlamydia infection,2019,Greece,62
 Chlamydia infection,2019,Spain,15612
-,,,
-,,,
 Chlamydia infection,2019,Finland,16181
 Chlamydia infection,2019,Croatia,150
 Chlamydia infection,2019,Hungary,913
@@ -676,8 +645,6 @@ Syphilis,2020,Denmark,445
 Syphilis,2020,Estonia,33
 Syphilis,2020,Greece,401
 Syphilis,2020,Spain,4531
-,,,
-,,,
 Syphilis,2020,Finland,207
 Syphilis,2020,France,982
 Syphilis,2020,Croatia,22
@@ -706,8 +673,6 @@ Gonorrhoea,2020,Denmark,2669
 Gonorrhoea,2020,Estonia,22
 Gonorrhoea,2020,Greece,161
 Gonorrhoea,2020,Spain,10306
-,,,
-,,,
 Gonorrhoea,2020,Finland,482
 Gonorrhoea,2020,France,5398
 Gonorrhoea,2020,Croatia,13
@@ -738,8 +703,6 @@ Hepatitis B,2020,Germany,3170
 Hepatitis B,2020,Denmark,136
 Hepatitis B,2020,Estonia,21
 Hepatitis B,2020,Greece,5
-,,,
-,,,
 Hepatitis B,2020,Finland,162
 Hepatitis B,2020,Croatia,7
 Hepatitis B,2020,Ireland,254
@@ -761,8 +724,6 @@ Hepatitis C,2020,Denmark,158
 Hepatitis C,2020,Estonia,123
 Hepatitis C,2020,Greece,19
 Hepatitis C,2020,Spain,391
-,,,
-,,,
 Hepatitis C,2020,Croatia,41
 Hepatitis C,2020,Ireland,25
 Hepatitis C,2020,Lithuania,65
@@ -779,8 +740,6 @@ Chlamydia infection,2020,Denmark,34681
 Chlamydia infection,2020,Estonia,942
 Chlamydia infection,2020,Greece,66
 Chlamydia infection,2020,Spain,15254
-,,,
-,,,
 Chlamydia infection,2020,Finland,16280
 Chlamydia infection,2020,Croatia,121
 Chlamydia infection,2020,Hungary,624
@@ -898,8 +857,6 @@ Syphilis,2021,Denmark,638
 Syphilis,2021,Estonia,31
 Syphilis,2021,Greece,654
 Syphilis,2021,Spain,5277
-,,,
-,,,
 Syphilis,2021,Finland,168
 Syphilis,2021,France,1285
 Syphilis,2021,Croatia,35
@@ -928,8 +885,6 @@ Gonorrhoea,2021,Denmark,2818
 Gonorrhoea,2021,Estonia,54
 Gonorrhoea,2021,Greece,246
 Gonorrhoea,2021,Spain,14610
-,,,
-,,,
 Gonorrhoea,2021,Finland,510
 Gonorrhoea,2021,France,7077
 Gonorrhoea,2021,Croatia,17
@@ -959,8 +914,6 @@ Hepatitis B,2021,Germany,3917
 Hepatitis B,2021,Denmark,118
 Hepatitis B,2021,Estonia,20
 Hepatitis B,2021,Greece,155
-,,,
-,,,
 Hepatitis B,2021,Finland,195
 Hepatitis B,2021,Croatia,5
 Hepatitis B,2021,Ireland,355
@@ -982,8 +935,6 @@ Hepatitis C,2021,Denmark,145
 Hepatitis C,2021,Estonia,129
 Hepatitis C,2021,Greece,43
 Hepatitis C,2021,Spain,546
-,,,
-,,,
 Hepatitis C,2021,Croatia,45
 Hepatitis C,2021,Ireland,45
 Hepatitis C,2021,Lithuania,57
@@ -999,8 +950,6 @@ Chlamydia infection,2021,Denmark,36632
 Chlamydia infection,2021,Estonia,977
 Chlamydia infection,2021,Greece,45
 Chlamydia infection,2021,Spain,20603
-,,,
-,,,
 Chlamydia infection,2021,Finland,16789
 Chlamydia infection,2021,France,12665
 Chlamydia infection,2021,Croatia,115
