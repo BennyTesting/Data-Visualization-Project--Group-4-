@@ -1,4 +1,4 @@
-RegionName,RegionCode,Time,TotalValue
+RegionName,RegionCode,Time,TotalValue,Description
 Belgium,BE,2017,17419
 Bulgaria,BG,2017,1187
 Cyprus,CY,2017,206
@@ -7,9 +7,7 @@ Germany,DE,2017,22351
 Denmark,DK,2017,36330
 Estonia,EE,2017,1787
 Greece,GR,2017,1682
-Spain,ES,2017,28639
-EU/EEA (without UK),EU/EEA,2017,311010
-EU/EEA (with UK),EU/EEA,2017,633420
+Spain,ES,2017,28639,This is a description of Spain.
 Finland,FI,2017,18437
 France,FR,2017,34284
 Croatia,HR,2017,599
@@ -48,8 +46,6 @@ Denmark,DK,2018,36955
 Estonia,EE,2018,1701
 Greece,GR,2018,1655
 Spain,ES,2018,34561
-EU/EEA (without UK),EU/EEA,2018,292682
-EU/EEA (with UK),EU/EEA,2018,649317
 Finland,FI,2018,18834
 France,FR,2018,11012
 Croatia,HR,2018,963
@@ -107,8 +103,6 @@ Denmark,DK,2019,39041
 Estonia,EE,2019,1729
 Greece,GR,2019,1650
 Spain,ES,2019,36659
-EU/EEA (without UK),EU/EEA,2019,309650
-EU/EEA (with UK),EU/EEA,2019,699987
 Finland,FI,2019,20304
 France,FR,2019,10160
 Croatia,HR,2019,971
@@ -165,8 +159,6 @@ Denmark,DK,2020,38695
 Estonia,EE,2020,1502
 Greece,GR,2020,1461
 Spain,ES,2020,33814
-EU/EEA (without UK),EU/EEA,2020,270521
-EU/EEA (with UK),EU/EEA,2020,270521
 Finland,FI,2020,20081
 France,FR,2020,10283
 Croatia,HR,2020,502
@@ -224,8 +216,6 @@ Denmark,DK,2021,40862
 Estonia,EE,2021,1544
 Greece,GR,2021,1804
 Spain,ES,2021,46356
-EU/EEA (without UK),EU/EEA,2021,315221
-EU/EEA (with UK),EU/EEA,2021,315221
 Finland,FI,2021,20425
 France,FR,2021,25067
 Croatia,HR,2021,565
@@ -282,8 +272,6 @@ Denmark,DK,2022,47327
 Estonia,EE,2022,1719
 Greece,EL,2022,2242
 Spain,ES,2022,65084
-EU/EEA (without UK),EU/EEA,2022,401131
-EU/EEA (with UK),EU/EEA,2022,401131
 Finland,FI,2022,21614
 France,FR,2022,28931
 Croatia,HR,2022,403

@@ -1,11 +1,11 @@
 html, body {
-    height: 100%; /* Ensure the body takes up full height */
-    margin: 0; /* Remove default margin */
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
+    display: flex;
+    flex-direction: column;
 }
 
 header, footer {
@@ -20,23 +20,6 @@ main {
     padding: 40px;
     text-align: justify;
     background-color: #FDFEFE;
-}
-
-.info-box {
-    background-color: #e9f7ef;
-    border: 1px solid #a3e6b8;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.info-box h2 {
-    color: #007a33;
-}
-
-.info-box p {
-    color: #333;
-    line-height: 1.6;
 }
 
 .navigation {
@@ -92,116 +75,81 @@ main {
     background-color: #555; 
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto; 
-}
-
-.box {
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s; 
-}
-
-.box:hover {
-    transform: translateY(-5px); 
-}
-
-.box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.box h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 footer {
-    height: 60px; /* Set a height for the footer */
+    height: 60px;
 }
 
 .line {
     fill: none;
     stroke-width: 2;
-  }
-  
-  .axis path,
-  .axis line {
+}
+
+.axis path, .axis line {
     fill: none;
     shape-rendering: crispEdges;
     stroke: #000;
-  }
-  
-  .x-axis text,
-  .y-axis text {
-    font-size: 12px;
-  }
-  
-  .grid line {
-    stroke: #ddd;
-    stroke-opacity: 0.8;
-    stroke-width: 2;
-    shape-rendering: crispEdges;
-  }
-  
-  /* Tooltip styling */
-  .tooltip {
+}
+
+.tooltip {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  /* Container for both chart and legend */
-  .chart-container {
-    width: 900px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 10px; /* Reduced gap to make room for the legend */
+}
+
+.chart {
+    width: 70%; /* Increased chart width to balance */
+    height: 500px;
+}
+
+.legend {
+    width: 20%; /* Reduced legend width */
     display: flex;
     flex-direction: column;
-  }
-  
-  /* SVG element should occupy most of the height */
-  .chart {
-    width: 100%;
-    height: 500px; /* Adjusted height of the SVG to ensure X-axis fits */
-  }
-  
-  /* Legend styling */
-  .legend {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);  /* 5 items per row */
-    gap: 15px;  /* Space between items */
-    font-size: 12px;
-    margin-top: 20px;
-    padding-bottom: 20px;  /* Ensure there's space at the bottom */
-  }
-  
-  .legend-item {
+    font-size: 11px; /* Slightly smaller font */
+    padding-left: 5px;
+}
+
+.legend-item {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .legend-box {
-    width: 15px;
-    height: 15px;
-    margin-right: 8px;
-  }
-  
+    margin: 2px 0 2px 0;
+    font-size: 12px;
+    margin-bottom: 3px; /* Reduced spacing */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.legend-item:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+.legend-box {
+    width: 12px; /* Reduced box size */
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 50%;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+.legend-item:hover .legend-box {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a glow effect */
+}
+
+/* Active Legend Item */
+.legend-item.active {
+    font-weight: bold; /* Make text bold for active items */
+    color: #16A085; /* Change text color for active items */
+}

@@ -85,6 +85,38 @@ function createPieChart(data) {
         });
 }
 
+// Function to fade in words one by one with proper spacing
+function fadeInDescriptionWords(descriptionBox) {
+    const paragraph = descriptionBox.querySelector("p");
+    const words = paragraph.innerText.split(" "); // Split the text into words
+    
+    // Clear the paragraph text and rebuild it word by word
+    paragraph.innerHTML = "";  // Clear the existing text (we will rebuild it word by word)
+    
+    // Create spans for each word
+    words.forEach((word, index) => {
+        const span = document.createElement("span");
+        span.textContent = word;  // Insert the word as text inside the span
+        span.style.opacity = 0;  // Start with opacity 0 (invisible)
+        span.style.display = "inline-block";  // Ensure each word is treated as an inline block
+        
+        // Append the word span
+        paragraph.appendChild(span);
+
+        // Add a space between words by appending a normal space (not a span)
+        if (index < words.length - 1) {
+            paragraph.appendChild(document.createTextNode(" ")); // Adding a regular space
+        }
+
+        // Apply the fade-in transition to each word
+        d3.select(span)
+            .transition()
+            .delay(index * 25)  // Delay each word by 150ms
+            .duration(50)        // Duration of the fade-in
+            .style("opacity", 1); // Fade the word in
+    });
+}
+
 // Load the CSV data
 d3.csv("PieChart.csv").then(function(data) {
     // Parse the data: convert "TotalValue" to numbers
@@ -99,26 +131,31 @@ d3.csv("PieChart.csv").then(function(data) {
     const initialData = groupedData.find(d => d[0] == 2017)[1];
     createPieChart(initialData);
 
-    // Function to update the pie chart and descriptions based on the selected year
-    window.updateChart = function(year) {
-        // Update the active button style
-        const buttons = document.querySelectorAll("button");
-        buttons.forEach(button => button.classList.remove("active"));
-        document.getElementById("button" + year).classList.add("active");
+// Function to update the pie chart and descriptions based on the selected year
+window.updateChart = function(year) {   
+    // Update the active button style
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.classList.remove("active"));
+    document.getElementById("button" + year).classList.add("active");
 
-        const yearData = groupedData.find(d => d[0] == year)[1];
-        createPieChart(yearData);
+    const yearData = groupedData.find(d => d[0] == year)[1];
+    createPieChart(yearData);
 
-        // Update the year label above the pie chart
-        document.getElementById("year-label").innerText = `Rate of HIV & AIDS Infection in ${year} between Male and Female`;
+    // Hide all description boxes
+    const allDescriptionBoxes = document.querySelectorAll(".year-description-box");
+    allDescriptionBoxes.forEach(box => box.style.display = "none");
 
-        // Hide all description boxes
-        const allDescriptionBoxes = document.querySelectorAll(".year-description-box");
-        allDescriptionBoxes.forEach(box => box.style.display = "none");
+    // Show the description box for the selected year
+    const descriptionBox = document.getElementById("description" + year);
+    descriptionBox.style.display = "block";  // Show the description box
 
-        // Show the description box for the selected year
-        document.getElementById("description" + year).style.display = "block";
-    };
+    // Update the year label inside the selected description box
+    const yearLabel = document.getElementById("year-label-" + year); // Select the unique year label
+    yearLabel.innerText = `Rate of HIV and AIDS Infection between Male and Female`;
+
+    // Fade in the text inside the description box
+    fadeInDescriptionWords(descriptionBox);  // Trigger the fade-in effect
+};
 
     // Call the function to show 2017 chart and description by default
     updateChart(2017);  // This will trigger the default view to show 2017's pie chart and description

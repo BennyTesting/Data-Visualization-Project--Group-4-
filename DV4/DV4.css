@@ -1,6 +1,8 @@
 html, body {
     height: 100%; /* Ensure the body takes up full height */
     margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure the page doesn't exceed the viewport width */
+    overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 body {
@@ -75,13 +77,38 @@ main {
     background-color: #555; 
 }
 
+/* Main container for both left and right sections */
+.chart-container {
+    display: flex; /* Flex layout for side-by-side placement */
+    justify-content: space-between; /* Distribute space between left and right containers */
+    align-items: flex-start; /* Align top of the containers */
+    width: 100%;
+    padding: 20px;
+}
+
+/* Left container for the Pie Chart, Buttons, and Legend */
+.left-container {
+    width: 50%; /* Left container takes up 50% of the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    justify-content: space-between; /* Distribute space between sections */
+    height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Horizontal, Vertical, Blur Radius, Color */
+    border-radius: 10px; /* Optional: add rounded corners */
+    padding: 20px 20px 30px 20px; /* Optional: add some padding inside the box */
+    background-color: #fff; /* Optional: add a background color to the box */
+}
+
+/* Button container styling */
 .button-container {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between buttons and pie chart */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
 }
 
 button {
-    margin: 10px;
     padding: 12px 20px;
     background-color: #fff;
     color: #16A085;
@@ -103,12 +130,14 @@ button.active {
     transform: scale(1.1);
 }
 
-#chart {
+/* Pie chart styling */
+.chart {
     width: 400px;
     height: 400px;
-    margin: 20px auto;
+    margin-bottom: 20px;
 }
 
+/* Legend styling below pie chart */
 .legend {
     display: flex;
     justify-content: center;
@@ -116,9 +145,9 @@ button.active {
 }
 
 .legend div {
-    margin-right: 20px;
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .legend-color {
@@ -127,21 +156,113 @@ button.active {
     margin-right: 5px;
 }
 
-.year-description-box {
-    display: none; /* Initially hide all year description boxes */
-    background-color: #f4f4f4;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    text-align: center;
+/* Right container for the year label and descriptions */
+.right-container {
+    width: 50%; /* Right container takes up the remaining 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 20px;
+    height: 90%;
+
 }
 
+/* Year label style */
 #year-label {
-    text-align: center;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    margin-bottom: 20px;
+    color: #333; /* Darker text for more contrast */
+    margin-bottom: 10px; /* Space below the year label */
+    text-align: left; /* Left-align the year label */
+}
+
+/* Year description container styling */
+.year-description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align descriptions to the left */
+    padding: 20px;
+}
+
+/* Year description box styling */
+.year-description-box {
+    display: none; /* Hide by default, will show dynamically */
+    text-align: justify;
+    background-color: #ffffff; /* White background for clarity */
+    padding: 20px;
+    width: 90%; /* Keeps the same width */
+
+}
+
+/* Improve text styling for paragraphs */
+.year-description-box p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.6; /* More space between lines for readability */
+    color: #555; /* Slightly lighter text for body copy */
+}
+
+/* Highlight important data in paragraph */
+.year-description-box p .highlight {
+    font-weight: bold;
+    color: #2a9d8f; /* A soft teal for important statistics */
+}
+
+/* Make words fade-in smoothly */
+.year-description-box p span {
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 0.5s ease;
+}
+
+/* Header styling inside each description box */
+.year-description-box h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #333; /* Dark color for subheaders */
+    font-weight: normal;
+}
+
+/* Year label style for all years */
+div[id^="year-label-"] {
+    font-size: 26px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bold;
+    color: #333; /* Darker text for contrast */
+    margin-bottom: 10px; /* Space below each year label */
+    text-align: center; /* Left-align the year label */
+    background-color: #f0f0f0; /* Light background to separate it visually */
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Ensures each year label is inline */
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* Optional: Adjust button or link styling if present in the description */
+.year-description-box a {
+    text-decoration: underline;
+    color: #2a9d8f; /* Consistent color theme with highlights */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.year-description-box a:hover {
+    color: #264653; /* Darker color on hover for better interactivity */
 }
 
 footer {

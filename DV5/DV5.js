@@ -1,6 +1,6 @@
 // Set the dimensions and margin for the chart
-const width = 1000;
-const height = 628;
+const width = 1200;
+const height = 800;
 const margin = 1;
 
 const customColorPalette = [
@@ -49,7 +49,8 @@ function updateChart(year) {
             id: d.Country,
             value: +d[year],
             group: d.Code,
-            name: d.Country
+            name: d.Country,
+            description: d.Description // Add description to each country
         }))
     };
 
@@ -110,7 +111,14 @@ function updateChart(year) {
         .ease(d3.easeElasticOut)
         .attr("transform", d => `translate(${d.x},${d.y})`);
 
+    // Hover effect for the bubbles
     node.on("mouseover", function (event, d) {
+        // Display country name and description in the right container
+        const rightContainer = document.querySelector('.right-container');
+        rightContainer.innerHTML = `
+            <h1>${d.data.name}</h1>
+            <p>${d.data.description}</p>
+        `;
         const scaleFactor = d.value < 1500 ? 2 : 1.2;
         d3.select(this).select("circle")
             .transition()
@@ -123,6 +131,9 @@ function updateChart(year) {
             .attr("fill-opacity", 1);
     })
     .on("mouseout", function (event, d) {
+        // Reset right container content when mouse is out
+        const rightContainer = document.querySelector('.right-container');
+        rightContainer.innerHTML = ''; // Clear the content
         d3.select(this).select("circle")
             .transition()
             .duration(300)

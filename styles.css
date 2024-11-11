@@ -132,4 +132,5 @@ a {
 
 footer {
     height: 60px; /* Set a height for the footer */
+    position: relative;
 }

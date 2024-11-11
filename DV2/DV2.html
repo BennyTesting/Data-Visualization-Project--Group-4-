@@ -3,53 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sexually Transmitted Infections(STI) Incident in Europe Country</title>
-    <link rel="stylesheet" href="DV2.css"> <!-- Link to external CSS -->
+    <title>Sexually Transmitted Infections (STI) Incident in European Countries</title>
+    <link rel="stylesheet" href="DV2.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
-
+<body>
 <header>
-    <h1>Sexually Transmitted Infections(STI) Incident in Europe Country</h1>
+    <h1>Sexually Transmitted Infections (STI) Incident in European Countries</h1>
 </header>
 
-<!-- Navigation Menu -->
 <nav class="navigation">
     <a href="../index.html">Home</a>
     <div class="dropdown">
-        <a href="">Statistic</a>
+        <a href="#">Statistic</a>
         <div class="dropdown-content">
-            <a href="../DV1/DV1.html">Sexually Transmitted Infections(STI) Analysis: A Yearly Overview</a>
-            <a href="DV2.html">Sexually Transmitted Infections(STI) Incident in Europe Country</a>
-            <a href="../DV3/DV3.html">Rate of AIDS cases (per 100,000 cases) in Europe between 2017 to 2021</a>
-            <a href="../DV4/DV4.html">Analysis Infection of Human Immunodeficiency Virus (HIV) & Acquired Immunodeficiency Syndrome (AIDS) between Gender</a>
-            <a href="../DV5/DV5.html">Analysis On Adult and Children that Living with HIV between Year 2017 to 2021</a>
+            <a href="../DV1/DV1.html">STI Analysis: A Yearly Overview</a>
+            <a href="DV2.html">STI Incident in European Countries</a>
+            <a href="../DV3/DV3.html">Rate of AIDS Cases (2017-2021)</a>
+            <a href="../DV4/DV4.html">HIV & AIDS Infection Analysis by Gender</a>
+            <a href="../DV5/DV5.html">HIV Prevalence in Adults and Children (2017-2021)</a>
         </div>
     </div>
-    <a href="../about.html">About Us</a>
 </nav>
 
-<main>
-    <h2>Overview</h2>
-    <p>Testing 123</p>
 
-    <!-- Container to center the SVG and Slider -->
-    <div class="geo-map-container">
-        <div class="slider-container">
-            <label for="yearSlider">Year: <span id="yearLabel"></span></label>
-            <input type="range" id="yearSlider" class="slider" min="0" max="0" value="0" step="1" />
+<main>
+    <div class="tooltip" style="position: absolute; opacity: 0; pointer-events: none;"></div>
+    <div class="layout-container">
+        <!-- Left side: Contains map, slider, and legend -->
+        <div class="left-side">
+            <div class="slider-container">
+                <label for="yearSlider">Year: <span id="yearLabel"></span></label>
+                <input type="range" id="yearSlider" class="slider" min="0" max="0" value="0" step="1" />
+            </div>
+
+            <!-- Geo map container with legend -->
+            <div class="geo-map-container">
+                <svg id="geomap" width="700" height="600"></svg>
+                <div class="legend-container">
+                    <svg id="legend" width="200" height="60"></svg>
+                </div>
+            </div>
         </div>
 
-        <div class="tooltip"></div> <!-- Tooltip element -->
-        <svg width="400" height="300"></svg>
+        <!-- Right side: Contains text -->
+        <div class="right-side">
+            <h3>Additional Information</h3>
+            <p>This is where your additional text content goes. You can explain the map, data, and other information related to the map visualizations.</p>
+        </div>
     </div>
 </main>
 
-<script src="DV2.js"></script> <!-- Link to external JS -->
-
-<!-- Footer Section -->
 <footer>
     <p>&copy; 2024 Data Visualization Project Group 4</p>
 </footer>
+
+<script src="DV2.js"></script>
 
 </body>
 </html>

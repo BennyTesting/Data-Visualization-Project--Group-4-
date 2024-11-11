@@ -1,14 +1,14 @@
 const chartContainer = d3.select("#chart");
 
-const mainMargin = {top: 20, right: 30, bottom: 20, left: 50},
-      mainWidth = 800 - mainMargin.left - mainMargin.right, 
-      mainHeight = 400 - mainMargin.top - mainMargin.bottom; 
+const mainMargin = { top: 40, right: 30, bottom: 40, left: 50 },
+    mainWidth = 800 - mainMargin.left - mainMargin.right,
+    mainHeight = 400 - mainMargin.top - mainMargin.bottom;
 
 const svg = chartContainer.append("svg")
     .attr("width", mainWidth + mainMargin.left + mainMargin.right)
     .attr("height", mainHeight + mainMargin.top + mainMargin.bottom)
     .append("g")
-    .attr("transform", `translate(${mainMargin.left + 40},${mainMargin.top})`); 
+    .attr("transform", `translate(${mainMargin.left + 40},${mainMargin.top})`);
 
 const x = d3.scaleBand().padding(0.2).range([0, mainWidth]);
 const y = d3.scaleLinear().range([mainHeight, 0]);
@@ -21,35 +21,39 @@ const yAxis = svg.append("g").attr("class", "y-axis");
 
 const detailContainer = d3.select("#detail-chart");
 
-const detailMargin = {top: 20, right: 30, bottom: 50, left: 80},
-      detailWidth = 1400 - detailMargin.left - detailMargin.right, 
-      detailHeight = 800 - detailMargin.top - detailMargin.bottom;
+const detailMargin = { top: 40, right: 30, bottom: 60, left: 100 },
+    detailWidth = 1400 - detailMargin.left - detailMargin.right;
+    detailHeight = 800 - detailMargin.top - detailMargin.bottom;
 
 const detailSvg = detailContainer.append("svg")
     .attr("width", detailWidth + detailMargin.left + detailMargin.right)
     .attr("height", detailHeight + detailMargin.top + detailMargin.bottom)
     .append("g")
-    .attr("transform", `translate(${detailMargin.left + 50},${detailMargin.top + 50})`); 
+    .attr("transform", `translate(${detailMargin.left + 50},${detailMargin.top})`);
 
-const detailX = d3.scaleLinear().range([0, detailWidth]);
-const detailY = d3.scaleBand().padding(0.5).range([0, detailHeight]); 
+    const detailX = d3.scaleLinear().range([0, detailWidth * 0.8]);
+const detailY = d3.scaleBand().padding(0.5).range([0, detailHeight]);
 
-const detailXAxis = detailSvg.append("g").attr("class", "x-axis");
+const detailXAxis = detailSvg.append("g")
+    .attr("class", "x-axis")
+    .attr("transform", `translate(0, ${detailHeight})`);
+
 const detailYAxis = detailSvg.append("g")
-    .attr("transform", `translate(0, 0)`) 
     .attr("class", "y-axis");
 
-let currentYear;
+let currentYear = 2021;
+let currentHealthTopic = null; // Track selected health topic
+let currentSortOrder = "none"; // Default sort order is "none"
 
 d3.csv("Disease_By_Year.csv").then(data => {
     data.forEach(d => {
         d.Time = +d.Time;
         d.TotalValue = +d.TotalValue;
-        d.Value = +d.Value || 0; 
+        d.Value = +d.Value || 0;
     });
 
     function updateChart(year) {
-        currentYear = year; 
+        currentYear = year;
         const filteredData = data.filter(d => d.Time === year);
 
         x.domain(filteredData.map(d => d.HealthTopic));
@@ -71,10 +75,11 @@ d3.csv("Disease_By_Year.csv").then(data => {
             .attr("y", y(0))
             .attr("height", 0)
             .attr("width", x.bandwidth())
-            .on("mouseover", function() { d3.select(this).attr("fill", "orange"); })
-            .on("mouseout", function() { d3.select(this).attr("fill", "steelblue"); })
-            .on("click", function(event, d) {
-                showDetailChart(d.HealthTopic, currentYear); 
+            .on("mouseover", function () { d3.select(this).attr("fill", "orange"); })
+            .on("mouseout", function () { d3.select(this).attr("fill", "steelblue"); })
+            .on("click", function (event, d) {
+                currentHealthTopic = d.HealthTopic; // Update current health topic on click
+                showDetailChart(d.HealthTopic, currentYear);
             })
             .transition().duration(500)
             .attr("y", d => y(d.TotalValue))
@@ -104,57 +109,58 @@ d3.csv("Disease_By_Year.csv").then(data => {
         xAxis.transition().duration(500).call(d3.axisBottom(x).tickSize(0));
         yAxis.transition().duration(500).call(d3.axisLeft(y));
 
-        detailSvg.selectAll(".detail-bar").remove(); 
-        detailXAxis.selectAll("*").remove(); 
-        detailYAxis.selectAll("*").remove(); 
-        detailContainer.style("display", "none"); 
+        detailSvg.selectAll(".detail-bar").remove();
+        detailXAxis.selectAll("*").remove();
+        detailYAxis.selectAll("*").remove();
+        detailContainer.style("display", "none");
     }
 
-    function showDetailChart(healthTopic, year) {
+    function showDetailChart(healthTopic, year, sortOrder = "none") {
         d3.csv("BarChart.csv").then(barData => {
             barData.forEach(d => {
-                d.Value = +d.Value || 0; 
-                d.Time = +d.Time; 
+                d.Value = +d.Value || 0;
+                d.Time = +d.Time;
             });
-    
-            const detailData = barData.filter(d => d.HealthTopic === healthTopic && d.Time === year);
-    
+
+            let detailData = barData.filter(d => d.HealthTopic === healthTopic && d.Time === year);
+
+            // Apply sorting if sortOrder is not "none"
+            if (sortOrder !== "none") {
+                detailData.sort((a, b) => sortOrder === "asc" ? a.Value - b.Value : b.Value - a.Value);
+            }
+
             detailContainer.style("display", "block");
-    
+
             detailSvg.selectAll(".year-label").remove();
-    
+
             detailSvg.append("text")
                 .attr("class", "year-label")
-                .attr("x", detailWidth / 2)
+                .attr("x", detailWidth / 2 - 120)
                 .attr("y", -10)
                 .attr("text-anchor", "middle")
                 .style("font-size", "16px")
                 .selectAll("tspan")
-                .data([
-                    {text: `Data for `, bold: false},
-                    {text: healthTopic, bold: true},
-                    {text: ` Based on Country in `, bold: false},
-                    {text: year, bold: true}
-                ])
+                .data([{
+                    text: "Data for ", bold: false
+                }, { text: healthTopic, bold: true }, {
+                    text: " Based on Country in ", bold: false
+                }, { text: year, bold: true }])
                 .enter().append("tspan")
                 .attr("font-weight", d => d.bold ? "bold" : "normal")
-                .text(d => d.text)
-    
+                .text(d => d.text);
+
             detailX.domain([0, d3.max(detailData, d => d.Value) * 1.5]);
-            detailY.domain(detailData.map(d => d.RegionName)); 
-    
+            detailY.domain(detailData.map(d => d.RegionName));
+
             const detailBars = detailSvg.selectAll(".detail-bar").data(detailData, d => d.RegionName);
-    
             detailBars.exit().remove();
-    
-            // Create/update the bars
-            detailBars
-                .transition().duration(500)
+
+            detailBars.transition().duration(500)
                 .attr("x", 0)
                 .attr("y", d => detailY(d.RegionName))
                 .attr("width", d => detailX(d.Value))
                 .attr("height", detailY.bandwidth());
-    
+
             detailBars.enter().append("rect")
                 .attr("class", "detail-bar")
                 .attr("x", 0)
@@ -165,59 +171,48 @@ d3.csv("Disease_By_Year.csv").then(data => {
                 .transition().duration(500)
                 .attr("y", d => detailY(d.RegionName))
                 .attr("width", d => detailX(d.Value));
-    
-            // Add text labels next to the bars
+
             const detailLabels = detailSvg.selectAll(".detail-label").data(detailData, d => d.RegionName);
-    
             detailLabels.exit().remove();
-    
-            // Create/update the text labels
-            detailLabels
-                .transition().duration(500)
-                .attr("x", d => detailX(d.Value) + 5) // Position the text slightly to the right of the bar
+
+            detailLabels.transition().duration(500)
+                .attr("x", d => detailX(d.Value) + 5)
                 .attr("y", d => detailY(d.RegionName) + detailY.bandwidth() / 2)
-                .attr("dy", ".35em")  // Vertically center the text
+                .attr("dy", ".35em")
                 .style("font-size", "12px")
                 .style("fill", "black")
                 .text(d => d.Value);
-    
-            // Enter new labels
+
             detailLabels.enter().append("text")
                 .attr("class", "detail-label")
-                .attr("x", d => detailX(d.Value) + 5) // Position the text slightly to the right of the bar
+                .attr("x", d => detailX(d.Value) + 5)
                 .attr("y", d => detailY(d.RegionName) + detailY.bandwidth() / 2)
-                .attr("dy", ".35em")  // Vertically center the text
+                .attr("dy", ".35em")
                 .style("font-size", "12px")
                 .style("fill", "black")
                 .text(d => d.Value);
-    
+
             detailXAxis.transition().duration(500).call(d3.axisBottom(detailX).ticks(15));
             detailYAxis.transition().duration(500).call(d3.axisLeft(detailY));
         });
     }
-    
 
-    // Select all buttons and add click event
-    d3.selectAll("button").on("click", function() {
-        const year = +this.textContent; 
-        currentYear = year; 
-
-        // Remove 'active' class from all buttons
+    d3.selectAll("button").on("click", function () {
+        const year = +this.textContent;
+        currentYear = year;
         d3.selectAll("button").classed("active", false);
-
-        // Add 'active' class to the clicked button
         d3.select(this).classed("active", true);
-
         updateChart(year);
     });
 
-    // Set the initial year (2017 in this case) as active
-    const initialYear = 2017; 
-    updateChart(initialYear);
+    d3.select("#sort-asc").on("click", () => {
+        currentSortOrder = "asc"; // Set sort order to ascending
+        showDetailChart(currentHealthTopic, currentYear, currentSortOrder);
+    });
+    d3.select("#sort-desc").on("click", () => {
+        currentSortOrder = "desc"; // Set sort order to descending
+        showDetailChart(currentHealthTopic, currentYear, currentSortOrder);
+    });
 
-    // Set the "2017" button as active on page load
-    d3.select("button").filter(function(d, i) {
-        return this.textContent === "2017"; // Select the button with the text "2017"
-    }).classed("active", true);
-
+    updateChart(2021); // Initial chart update
 });

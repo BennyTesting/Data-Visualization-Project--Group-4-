@@ -1,9 +1,12 @@
+/* Basic reset for body and layout */
 html, body {
     height: 100%;
     margin: 0;
     overflow: auto;
+    font-family: Arial, sans-serif;
 }
 
+/* Header and Footer Styling */
 header, footer {
     background-color: #16A085;
     color: #fff;
@@ -11,33 +14,30 @@ header, footer {
     padding: 1em;
 }
 
-main {
-    flex-grow: 1;
-    padding: 40px;
-    text-align: justify;
-    background-color: #FDFEFE;
-    overflow: auto;
+footer {
+    height: 60px;
+    position: relative;
 }
 
 .navigation {
-    background-color: #444;
-    display: flex;
-    padding: 3px;
+    background-color: #444; 
+    display: flex; 
+    padding: 3px; 
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .navigation a {
     color: #fff;
-    text-decoration: none;
-    padding: 1em 1.5em;
-    position: relative;
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; 
+    padding: 1em 1.5em; 
+    position: relative; 
+    transition: background-color 0.3s, color 0.3s; 
     border-radius: 5px;
 }
 
 .navigation a:hover {
-    background-color: #555;
+    background-color: #555; 
 }
 
 .dropdown {
@@ -47,184 +47,177 @@ main {
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    margin-top: 15px;
-    background-color: #444;
-    min-width: 300px;
-    z-index: 1;
+    position: absolute; 
+    margin-top: 15px; 
+    background-color: #444; 
+    min-width: 300px; 
+    z-index: 1; 
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
+    color: white; 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: block; 
+    transition: background-color 0.3s; 
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; 
 }
 
 .dropdown-content a:hover {
-    background-color: #555;
+    background-color: #555; 
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-}
-
-.box {
-    text-align: center;
-    border: 1px solid #ccc;
+/* Overview section (between the slider and navigation) */
+.overview {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    color: #333;
+    text-align: center;
 }
 
-.box:hover {
-    transform: translateY(-5px);
+/* Main Content Area */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+
 }
 
-.box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* Container for the layout, split into left and right parts */
+.layout-container {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
 }
 
-.box h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
+/* Left side: Contains map, slider, and legend */
+.left-side {
+    width: 50%;
+    padding: 20px;
+    background-color: lightgrey;
+}
+
+/* Right side: Contains text */
+.right-side {
+    width: 40%;
+    padding: 20px;
     color: #333;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* Geo map container (centers the map and positions the legend) */
+.geo-map-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-footer {
+/* Ensure the map stays on the left side and is responsive */
+#geomap {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;  /* Keep the map at max 700px width */
+}
+
+/* Legend container (positioned at the top-right of the map) */
+.legend-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+/* Styling for the legend */
+#legend {
+    width: 200px;
     height: 60px;
 }
 
-.country {
-    stroke: #ffffff;
-    stroke-width: 1;
-}
-
-.tooltip {
-    position: absolute;
-    text-align: center;
-    padding: 5px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    pointer-events: none;
-    opacity: 0;
-}
-
-/* Center the SVG and slider */
-.geo-map-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    height: 100%; /* Take up full available height */
-    margin: 0 auto;
-}
-
-svg {
-    width: 60%; /* Set width of SVG to 80% of its parent */
-    max-width: 100%; /* Prevent SVG from overflowing the container */
-    height: auto;
-    display: block;
-}
-
-/* Slider Container */
+/* Styling for the slider container */
 .slider-container {
-    margin-bottom: 20px; /* Space between slider and the SVG */
+    margin-bottom: 20px;
     text-align: center;
-    width: 80%; /* Set width of slider container to 80% of the parent */
 }
 
-/* Default slider styles */
+/* Styling for the range slider */
 .slider {
-    width: 100%; /* Ensure the slider stretches fully inside its container */
+    width: 100%;
     height: 10px;
-    background: linear-gradient(to right, #4CAF50, #8BC34A); /* Gradient background for the slider track */
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
     border-radius: 10px;
     outline: none;
     transition: background 0.3s ease;
-    cursor: pointer;
 }
 
-/* Hover effect on the track */
-.slider:hover {
-    background: linear-gradient(to right, #81C784, #66BB6A);
-}
-
-/* Range slider thumb styling (Webkit browsers) */
-.slider::-webkit-slider-thumb {
+/* Slider thumb styling */
+.slider::-webkit-slider-thumb, 
+.slider::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px; /* Slightly larger thumb for better visibility */
-    height: 25px;
-    border-radius: 50%;
-    background: #FF9800; /* Bright color for the thumb */
-    border: 3px solid #fff; /* White border around the thumb for contrast */
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-
-/* Range slider thumb styling (Firefox) */
-.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #FF9800; /* Bright color for the thumb */
-    border: 3px solid #fff; /* White border around the thumb */
+    background: #FF9800;
+    border: 3px solid #fff;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
 }
 
-/* Hover effect on the thumb */
-.slider:hover::-webkit-slider-thumb {
-    background: #FB8C00; /* Darken the thumb color on hover */
-}
-
+/* Hover effect on the slider thumb */
+.slider:hover::-webkit-slider-thumb, 
 .slider:hover::-moz-range-thumb {
-    background: #FB8C00; /* Darken the thumb color on hover */
+    background: #FB8C00;
 }
 
 /* Active (dragging) thumb effect */
-.slider:active::-webkit-slider-thumb {
-    background: #FF5722; /* Change the thumb color when dragging */
-    transform: scale(1.2); /* Slightly enlarge the thumb when dragging */
-}
-
+.slider:active::-webkit-slider-thumb, 
 .slider:active::-moz-range-thumb {
-    background: #FF5722; /* Change the thumb color when dragging */
-    transform: scale(1.2); /* Slightly enlarge the thumb when dragging */
+    background: #FF5722;
+    transform: scale(1.2);
 }
 
 /* Focus effect (when the slider is focused) */
 .slider:focus {
     outline: none;
-    background: linear-gradient(to right, #66BB6A, #81C784); /* Slightly different gradient when focused */
+    background: linear-gradient(to right, #66BB6A, #81C784);
 }
 
-/* Display the current year label in a large font */
-#yearLabel {
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /* Ensures the tooltip doesn't interfere with mouse events */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 9999;  /* High z-index to make sure the tooltip is on top */
+}
+
+/* Text styling for the right-side content */
+.right-side h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.right-side p {
     font-size: 1.2em;
-    font-weight: bold;
-    color: #007BFF; /* Blue color for the current year */
-    margin-left: 10px;
+    line-height: 1.6;
+}
+
+footer {
+    height: 60px; /* Set a height for the footer */
+    position: relative;
 }

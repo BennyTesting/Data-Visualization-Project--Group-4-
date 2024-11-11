@@ -27,62 +27,122 @@
             <a href="../DV5/DV5.html">Analysis On Adult and Children that Living with HIV between Year 2017 to 2021</a>
         </div>
     </div>
-    <a href="../about.html">About Us</a>
 </nav>
 
-<main>
-    <h2>Overview</h2>
-    <p>Testing 123</p>
-</main>
 
-<div class="button-container">
-    <button id="button2017" onclick="updateChart(2017)">2017</button>
-    <button id="button2018" onclick="updateChart(2018)">2018</button>
-    <button id="button2019" onclick="updateChart(2019)">2019</button>
-    <button id="button2020" onclick="updateChart(2020)">2020</button>
-    <button id="button2021" onclick="updateChart(2021)">2021</button>
+<div id="chart-container" class="chart-container">
+    <!-- Left Container: Pie chart, Buttons, and Legends -->
+    <div class="left-container">
+        <div class="button-container">
+            <button id="button2017" onclick="updateChart(2017)">2017</button>
+            <button id="button2018" onclick="updateChart(2018)">2018</button>
+            <button id="button2019" onclick="updateChart(2019)">2019</button>
+            <button id="button2020" onclick="updateChart(2020)">2020</button>
+            <button id="button2021" onclick="updateChart(2021)">2021</button>
+        </div>
+        <!-- Pie chart -->
+        <div id="chart" class="chart"></div>
+        <!-- Legend Section -->
+        <div class="legend">
+            <div>
+                <div class="legend-color" style="background-color: #1E90FF;"></div>
+                <span>Male</span>
+            </div>
+            <div>
+                <div class="legend-color" style="background-color: #FF6347;"></div>
+                <span>Female</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Container: Year Label and Description -->
+    <div class="right-container">       
+        <div id="year-description-container" class="year-description-container">            
+            <div id="description2017" class="year-description-box">
+                <div id="year-label-2017"></div>
+                <h2>2017</h2>
+                <p>In 2017, the distribution of HIV and AIDS cases in European countries 
+                    showed a relatively balanced gender split, with a slight difference 
+                    between males and females. Males represented <b>49.4%</b> of the total cases, 
+                    with a rate of 103.6 cases per 100,000 men, while females accounted for 
+                    50.6% of the cases, with a slightly higher rate of 106 cases per 100,000 
+                    women. This resulted in a 1.2% difference between the two genders in terms 
+                    of overall case distribution. While historically HIV and AIDS have affected 
+                    males more significantly in many regions, the near-equal distribution in 2017 
+                    reflects an increasing impact on women in Europe. Factors such as biological 
+                    susceptibility, social determinants of health, and healthcare access may contribute 
+                    to this trend. The balance between the genders underscores the need for targeted 
+                    public health strategies that address the needs of both men and women, ensuring equal
+                     access to prevention, treatment, and care to reduce the overall burden of the disease
+                     across all populations.</p>
+            </div>
+            <div id="description2018" class="year-description-box">
+                <div id="year-label-2018"></div>
+                <h2>2018</h2>
+                <p>In 2018, the distribution of HIV and AIDS cases in European countries showed a notable 
+                    difference between males and females. Males accounted for 57.6% of the total cases, with
+                     a rate of 108.4 cases per 100,000 men, while females represented 42.4% of the cases, with
+                      a rate of 79.8 cases per 100,000 women. This resulted in a higher rate of HIV and AIDS 
+                      cases among men compared to women, both in terms of percentage and total rate. The higher
+                       rate among males suggests that, in 2018, men were more affected by the epidemic in Europe,
+                        though the difference in prevalence between the genders is still significant. Factors 
+                        such as social behaviors, risk factors, and access to healthcare may contribute to this 
+                        disparity. Despite the higher rate among men, the data highlights the ongoing need for 
+                        comprehensive public health strategies that address the specific needs of both genders, 
+                        ensuring that prevention, treatment, and care services are accessible and effective for all.</p>
+            </div>
+            <div id="description2019" class="year-description-box">
+                <div id="year-label-2019"></div>
+                <h2>2019</h2>
+                <p>In 2019, the distribution of HIV and AIDS cases in European countries showed a shift compared 
+                    to previous years, with males accounting for 54.6% of the total cases, reflecting a rate of 
+                    87.9 cases per 100,000 men. In contrast, females represented 45.4% of the cases, with a rate 
+                    of 73.2 cases per 100,000 women. Although males still made up a larger proportion of the cases,
+                     the gap between genders had narrowed compared to earlier years. The total rate of cases was 
+                     higher among men, but the difference in rates between the two genders had decreased, indicating
+                      a potential trend of increased HIV and AIDS cases among women, though still at a lower rate. 
+                      This shift could reflect changing patterns of infection, public health interventions, or 
+                      improvements in access to healthcare. The data emphasizes the continued need for tailored public
+                       health strategies that address the unique needs of both men and women, ensuring that all individuals
+                        have access to prevention, treatment, and care services to manage and reduce the impact of HIV and 
+                        AIDS in Europe..</p>
+            </div>
+            <div id="description2020" class="year-description-box">
+                <div id="year-label-2020"></div>
+                <h2>2020</h2>
+                <p>
+                    In 2020, the distribution of HIV and AIDS cases in European countries showed a significant shift, with 
+                    females making up the majority of reported cases. Females accounted for 70.9% of the total cases, reflecting
+                     a rate of 38.2 cases per 100,000 women, while males represented only 29.1% of the cases, with a much lower rate
+                      of 15.7 cases per 100,000 men. This marked change in the gender distribution indicates a notable increase in the
+                       proportion of women affected by HIV and AIDS in 2020, while the overall rate of cases among men decreased 
+                       substantially compared to previous years. Several factors could explain this shift, including changes in 
+                       transmission patterns, improvements in prevention and treatment among men, or differences in access to care.
+                        This data underscores the need for public health strategies that are increasingly focused on addressing the
+                         specific needs of women, alongside continuing efforts to reach all populations, ensuring that both men and
+                          women have access to the necessary resources for prevention, treatment, and care.</p>
+            </div>
+            <div id="description2021" class="year-description-box">
+                <div id="year-label-2021"></div>
+                <h2>2021</h2>
+                <p>
+                    In 2021, the distribution of HIV and AIDS cases in European countries continued to show a pronounced gender disparity, 
+                    with females representing a much larger share of the cases. Females accounted for 74.8% of the total cases, with a rate
+                     of 68.4 cases per 100,000 women, while males made up just 25.2% of the cases, with a rate of 23 cases per 100,000 men. 
+                     This data reveals a further increase in the proportion of women affected by HIV and AIDS, with the rate among females 
+                     rising significantly compared to previous years. Meanwhile, the rate among males remained relatively low and showed a 
+                     continued decrease in comparison to earlier years. These trends suggest that women in Europe may be facing a growing risk
+                      of HIV and AIDS, which could be influenced by various factors such as changes in transmission dynamics, shifting patterns
+                       of vulnerability, or improvements in care and prevention for men. The stark gender imbalance highlights the importance of
+                        gender-sensitive public health strategies that specifically target the rising prevalence among women, ensuring equitable
+                         access to prevention, education, and treatment for all individuals.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- Year Label (to be updated dynamically) -->
-<div id="year-label">Rate of HIV & AIDS Infection in 2017 between Male and Female</div>
 
-<div id="chart"></div>
 
-<!-- Legend Box -->
-<div class="legend">
-    <div>
-        <div class="legend-color" style="background-color: #1E90FF;"></div>
-        <span>Male</span>
-    </div>
-    <div>
-        <div class="legend-color" style="background-color: #FF6347;"></div>
-        <span>Female</span>
-    </div>
-</div>
-
-<!-- Year Description Boxes -->
-<div class="year-info">
-    <div id="description2017" class="year-description-box">
-        <h2>2017</h2>
-        <p>Description of data for 2017 will be displayed here.</p>
-    </div>
-    <div id="description2018" class="year-description-box">
-        <h2>2018</h2>
-        <p>Description of data for 2018 will be displayed here.</p>
-    </div>
-    <div id="description2019" class="year-description-box">
-        <h2>2019</h2>
-        <p>Description of data for 2019 will be displayed here.</p>
-    </div>
-    <div id="description2020" class="year-description-box">
-        <h2>2020</h2>
-        <p>Description of data for 2020 will be displayed here.</p>
-    </div>
-    <div id="description2021" class="year-description-box">
-        <h2>2021</h2>
-        <p>Description of data for 2021 will be displayed here.</p>
-    </div>
-</div>
 
 <script src="DV4.js"></script>
 
