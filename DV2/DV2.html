@@ -26,7 +26,6 @@
     </div>
 </nav>
 
-
 <main>
     <div class="tooltip" style="position: absolute; opacity: 0; pointer-events: none;"></div>
     <div class="layout-container">
@@ -46,10 +45,27 @@
             </div>
         </div>
 
-        <!-- Right side: Contains text -->
+        <!-- Right side: Contains table and additional information -->
         <div class="right-side">
-            <h3>Additional Information</h3>
-            <p>This is where your additional text content goes. You can explain the map, data, and other information related to the map visualizations.</p>
+            <h3>Sexually Transmitted Infections (STI) Incidence in European Countries (2017-2022)</h3>
+            <p>This visualization highlights the incidence of Sexually Transmitted Infections (STIs) across European countries from 2017 to 2022. It identifies the countries with the highest and lowest STI rates each year, offering insights into trends and regional differences.</p>
+            
+            <p>The highest rates may reflect factors like increased transmission, population demographics, or healthcare access, while the lowest rates often indicate effective prevention measures and sexual health education. This tool helps track progress, pinpoint areas for improvement, and support informed decisions in STI prevention across Europe.</p>
+            
+            <!-- Data table for displaying the highest and lowest countries -->
+            <div class="table-container">
+                <h4>Highest and Lowest Incidence Rates</h4>
+                <table id="dataTable" style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left; border: 1px solid black;">Rank</th>
+                            <th style="text-align: center; border: 1px solid black;">Country</th>
+                            <th style="text-align: right; border: 1px solid black;">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
     </div>
 </main>

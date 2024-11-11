@@ -43,9 +43,9 @@ function updateMap(geoData, selectedYear) {
 
         // Define a projection centered around Europe but adjusted to be more to the left and up
         const projection = d3.geoMercator()
-            .center([18, 58]) // Move the map further left and up (Adjust as necessary)
-            .scale(400)         // Adjust scale to fit the container
-            .translate([width / 2, height / 2]); // Center the map in the SVG container
+            .center([18, 58])
+            .scale(400)
+            .translate([width / 2, height / 2]);
 
         // Define a path generator
         const path = d3.geoPath().projection(projection);
@@ -57,10 +57,10 @@ function updateMap(geoData, selectedYear) {
 
         // Define a color scale with more range (added additional steps)
         const color = d3.scaleLinear()
-            .domain([500, 1000, 2000, 5000, 10000, 20000, 30000, 50000, maxValue])  // Updated range steps
+            .domain([500, 1000, 2000, 5000, 10000, 20000, 30000, 50000, maxValue])
             .range([ 
                 "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238b45", 
-                "#006d2c", "#00441b", "#004d27"  // Max value gets an even darker green
+                "#006d2c", "#00441b", "#004d27"
             ]);
 
         // Clear previous map
@@ -73,44 +73,32 @@ function updateMap(geoData, selectedYear) {
             .attr("class", "country")
             .attr("d", path)
             .attr("fill", d => {
-                const value = dataMap.get(d.properties.ISO2); // Use ISO2 for matching
-                return value ? color(value) : "#ccc"; // Default color if no data
+                const value = dataMap.get(d.properties.ISO2);
+                return value ? color(value) : "#ccc";
             })
-            .attr("stroke", "#333") // Add stroke color (dark gray or any color you prefer)
-            .attr("stroke-width", 1) // Set stroke width
+            .attr("stroke", "#333")
+            .attr("stroke-width", 1)
             .on("mouseover", function(event, d) {
-                d3.select(this).style("fill", "orange"); // Highlight on hover
+                d3.select(this).style("fill", "orange");
 
-                // Set tooltip content and position
                 const value = dataMap.get(d.properties.ISO2);
                 tooltip.transition().duration(200).style("opacity", .9);
-
-                // Set the tooltip content dynamically based on data
                 tooltip.html(`${d.properties.NAME}: ${value !== undefined ? value : "No data"}`);
-
-                // Ensure the tooltip is displayed at the right position
                 tooltip.style("left", (event.pageX + 5) + "px")
                        .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function(event, d) {
                 const value = dataMap.get(d.properties.ISO2);
                 d3.select(this).style("fill", value ? color(value) : "#ccc");
-
-                // Hide the tooltip
                 tooltip.transition().duration(500).style("opacity", 0);
             });
 
-        // Clear old legend items (country names are removed)
-        d3.select("#legend").selectAll("*").remove();
-
-        // Add the gradient scale for color (scale bar format)
-        const legendWidth = 200; // Width of the color scale legend
+        // Gradient scale legend with ruler ticks
+        const legendWidth = 200;
         const legend = d3.select("#legend");
 
-        // Create a legend scale based on the color scale
-        const legendScale = d3.scaleLinear()
-            .domain([minValue, maxValue])
-            .range([0, legendWidth]);
+        // Clear previous legend items
+        legend.selectAll("*").remove();
 
         // Append a gradient for the color scale
         const gradient = legend.append("defs")
@@ -127,7 +115,6 @@ function updateMap(geoData, selectedYear) {
             .attr("offset", (d, i) => `${(i / (color.range().length - 1)) * 100}%`)
             .attr("stop-color", d => d);
 
-        // Add a rectangle to display the color scale (gradient bar)
         legend.append("rect")
             .attr("x", 0)
             .attr("y", 20)
@@ -135,48 +122,62 @@ function updateMap(geoData, selectedYear) {
             .attr("height", 20)
             .style("fill", "url(#linear-gradient)");
 
-        // Number of ticks you want along the bottom of the legend
-        const numTicks = 3; 
-        const midValue = (minValue + maxValue) / 2;
+        // Ruler ticks and labels
+        const legendScale = d3.scaleLinear()
+            .domain([0, maxValue]) // Start the domain at 0
+            .range([0, legendWidth]);
 
-        // Generate tick values at equal intervals
-        const tickValues = d3.range(minValue, maxValue + 1, (maxValue - minValue) / (numTicks - 1));
+        const ticks = [0, (0 + maxValue) / 2, maxValue];
 
-        // Append ticks (lines) along the bottom
         legend.selectAll(".tick")
-            .data(tickValues)
+            .data(ticks)
             .enter().append("line")
-            .attr("x1", d => legendScale(d))  // Position the tick along the x-axis
-            .attr("x2", d => legendScale(d))  // Ensure tick is vertical
-            .attr("y1", 20)                   // Position tick at the bottom line
-            .attr("y2", 40)                   // Extend tick down (adjust if needed)
-            .attr("stroke", "#000")           // Tick color
-            .attr("stroke-width", 1);         // Tick width
+            .attr("x1", d => legendScale(d))
+            .attr("x2", d => legendScale(d))
+            .attr("y1", 20)
+            .attr("y2", 40)
+            .attr("stroke", "#000");
 
-        legend.append("text")
-            .attr("x", legendScale(midValue))  // Position it at the scale of the mid value
-            .attr("y", 40)
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")  // Center align the mid label
-            .style("font-size", "14px")
-            .text(`${midValue.toFixed(0)}`);  // Optionally format the mid value    
+        legend.selectAll(".tick-label")
+            .data(ticks)
+            .enter().append("text")
+            .attr("x", d => legendScale(d))
+            .attr("y", 55)
+            .style("text-anchor", d => d === 0 ? "start" : d === maxValue ? "end" : "middle")
+            .text(d => Math.round(d));
 
-        // Add text labels for the min and max value (as before)
-        legend.append("text")
-            .attr("x", 0)
-            .attr("y", 40)
-            .attr("dy", "1em")
-            .style("text-anchor", "start")
-            .style("font-size", "14px")
-            .text(`0`);
+        // Populate the table with highest and lowest values
+        const sortedData = Array.from(dataMap.entries())
+            .filter(d => d[1] > 0)  // Filter out entries with a value of 0
+            .sort((a, b) => a[1] - b[1]);
 
-        legend.append("text")
-            .attr("x", legendWidth)
-            .attr("y", 40)
-            .attr("dy", "1em")
-            .style("text-anchor", "end")
-            .style("font-size", "14px") 
-            .text(`${maxValue}`);
+        // If there is no data after filtering, handle the case
+        if (sortedData.length === 0) {
+            const tableBody = d3.select("#dataTable tbody");
+            tableBody.html(""); // Clear previous entries
+
+            tableBody.append("tr")
+                .html(`<td colspan="3" style="text-align: center; border: 1px solid black;">No data with values greater than 0</td>`);
+            return;
+        }
+
+        const lowest = sortedData[0];
+        const highest = sortedData[sortedData.length - 1];
+
+        const tableBody = d3.select("#dataTable tbody");
+        tableBody.html(""); // Clear previous entries
+
+        // Add lowest entry
+        tableBody.append("tr")
+            .html(`<td style="text-align: left; border: 1px solid black;">Lowest</td>
+                   <td style="text-align: center; border: 1px solid black;">${lowest[0]}</td>
+                   <td style="text-align: right; border: 1px solid black;">${lowest[1]}</td>`);
+
+        // Add highest entry
+        tableBody.append("tr")
+            .html(`<td style="text-align: left; border: 1px solid black;">Highest</td>
+                   <td style="text-align: center; border: 1px solid black;">${highest[0]}</td>
+                   <td style="text-align: right; border: 1px solid black;">${highest[1]}</td>`);
     });
 }
 

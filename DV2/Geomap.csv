@@ -1,4 +1,4 @@
-RegionName,RegionCode,Time,TotalValue,Description
+RegionName,RegionCode,Time,TotalValue
 Belgium,BE,2017,17419
 Bulgaria,BG,2017,1187
 Cyprus,CY,2017,206
@@ -7,7 +7,7 @@ Germany,DE,2017,22351
 Denmark,DK,2017,36330
 Estonia,EE,2017,1787
 Greece,GR,2017,1682
-Spain,ES,2017,28639,This is a description of Spain.
+Spain,ES,2017,28639
 Finland,FI,2017,18437
 France,FR,2017,34284
 Croatia,HR,2017,599

@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../DV1"
+		},
+		{
+			"path": "../../DV2"
+		},
+		{
+			"path": "../../DV3"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DV2"
+	}
+}
