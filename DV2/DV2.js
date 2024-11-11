@@ -35,9 +35,10 @@ function updateMap(geoData, selectedYear) {
     // Filter CSV data for the selected year and create a map for it
     dataMap.clear(); // Clear previous data
     d3.csv("Geomap.csv").then(csvData => {
+        // Create a map where RegionCode is the key and RegionName and TotalValue are stored as a value
         csvData.forEach(d => {
             if (d.Time === selectedYear) {
-                dataMap.set(d.RegionCode, +d.TotalValue); // Use RegionCode as key
+                dataMap.set(d.RegionCode, { name: d.RegionName, value: +d.TotalValue });
             }
         });
 
@@ -51,7 +52,7 @@ function updateMap(geoData, selectedYear) {
         const path = d3.geoPath().projection(projection);
 
         // Determine the min and max values for setting the color scale
-        const values = Array.from(dataMap.values());
+        const values = Array.from(dataMap.values()).map(d => d.value);
         const minValue = d3.min(values);
         const maxValue = d3.max(values);
 
@@ -73,7 +74,7 @@ function updateMap(geoData, selectedYear) {
             .attr("class", "country")
             .attr("d", path)
             .attr("fill", d => {
-                const value = dataMap.get(d.properties.ISO2);
+                const value = dataMap.get(d.properties.ISO2)?.value;
                 return value ? color(value) : "#ccc";
             })
             .attr("stroke", "#333")
@@ -81,14 +82,14 @@ function updateMap(geoData, selectedYear) {
             .on("mouseover", function(event, d) {
                 d3.select(this).style("fill", "orange");
 
-                const value = dataMap.get(d.properties.ISO2);
+                const value = dataMap.get(d.properties.ISO2)?.value;
                 tooltip.transition().duration(200).style("opacity", .9);
                 tooltip.html(`${d.properties.NAME}: ${value !== undefined ? value : "No data"}`);
                 tooltip.style("left", (event.pageX + 5) + "px")
                        .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function(event, d) {
-                const value = dataMap.get(d.properties.ISO2);
+                const value = dataMap.get(d.properties.ISO2)?.value;
                 d3.select(this).style("fill", value ? color(value) : "#ccc");
                 tooltip.transition().duration(500).style("opacity", 0);
             });
@@ -148,8 +149,8 @@ function updateMap(geoData, selectedYear) {
 
         // Populate the table with highest and lowest values
         const sortedData = Array.from(dataMap.entries())
-            .filter(d => d[1] > 0)  // Filter out entries with a value of 0
-            .sort((a, b) => a[1] - b[1]);
+            .filter(d => d[1].value > 0)  // Filter out entries with a value of 0
+            .sort((a, b) => a[1].value - b[1].value);
 
         // If there is no data after filtering, handle the case
         if (sortedData.length === 0) {
@@ -167,19 +168,20 @@ function updateMap(geoData, selectedYear) {
         const tableBody = d3.select("#dataTable tbody");
         tableBody.html(""); // Clear previous entries
 
-        // Add lowest entry
+        // Add lowest entry with RegionName
         tableBody.append("tr")
             .html(`<td style="text-align: left; border: 1px solid black;">Lowest</td>
-                   <td style="text-align: center; border: 1px solid black;">${lowest[0]}</td>
-                   <td style="text-align: right; border: 1px solid black;">${lowest[1]}</td>`);
+                   <td style="text-align: center; border: 1px solid black;">${lowest[1].name}</td>
+                   <td style="text-align: right; border: 1px solid black;">${lowest[1].value}</td>`);
 
-        // Add highest entry
+        // Add highest entry with RegionName
         tableBody.append("tr")
             .html(`<td style="text-align: left; border: 1px solid black;">Highest</td>
-                   <td style="text-align: center; border: 1px solid black;">${highest[0]}</td>
-                   <td style="text-align: right; border: 1px solid black;">${highest[1]}</td>`);
+                   <td style="text-align: center; border: 1px solid black;">${highest[1].name}</td>
+                   <td style="text-align: right; border: 1px solid black;">${highest[1].value}</td>`);
     });
 }
+
 
 // Zoom functionality using d3.zoom
 const zoom = d3.zoom()

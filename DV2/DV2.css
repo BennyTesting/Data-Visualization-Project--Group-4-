@@ -15,8 +15,13 @@ header, footer {
 }
 
 footer {
-    height: 60px;
+    background-color: #16A085;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .navigation {
@@ -216,10 +221,6 @@ main {
     line-height: 1.6;
 }
 
-footer {
-    height: 60px; /* Set a height for the footer */
-    position: relative;
-}
 
 /* Enhanced Table Styling */
 table {

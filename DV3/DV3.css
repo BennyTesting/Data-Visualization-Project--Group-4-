@@ -1,6 +1,8 @@
 html, body {
     height: 100%;
     margin: 0;
+    overflow: auto;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -14,6 +16,27 @@ header, footer {
     text-align: center;
     padding: 1em;
 }
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: 600; /* Slightly bolder */
+    color: #2c3e50; /* Darker, more professional color */
+    margin-bottom: 20px; /* Added margin for space below */
+    text-align: center; /* Centered heading */
+    letter-spacing: 1px; /* Slight letter spacing for a modern look */
+  }
+  
+main p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15em; /* Slightly larger text for readability */
+    line-height: 1.8; /* Increased line height for easier reading */
+    color: #34495e; /* Dark gray color for better contrast */
+    max-width: 800px; /* Maximum width to prevent text from stretching too far */
+    margin: 0 auto; /* Center the text */
+    text-align: justify; /* Justified text for better alignment */
+    padding: 0 20px; /* Padding to prevent text from touching edges */
+  }
 
 main {
     flex: 1;
@@ -76,7 +99,13 @@ main {
 }
 
 footer {
-    height: 60px;
+    background-color: #16A085;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .line {
@@ -93,11 +122,14 @@ footer {
 .tooltip {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    color: white;
     padding: 10px;
     border-radius: 5px;
     pointer-events: none;
-}
+    font-size: 0.9em;
+    transition: opacity 0.3s;
+    display: none; /* Hide by default */
+  }
 
 .chart-container {
     display: flex;

@@ -3,6 +3,8 @@ html, body {
     margin: 0; /* Remove default margin */
     width: 100%; /* Ensure the page doesn't exceed the viewport width */
     overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow: auto;
+    font-family: Arial, sans-serif;
 }
 
 body {

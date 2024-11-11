@@ -177,14 +177,13 @@ svg {
 
 /* Footer Styles */
 footer {
-    height: 60px;
-    position: relative;
     background-color: #16A085;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    padding: 5px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Detail Chart Section */

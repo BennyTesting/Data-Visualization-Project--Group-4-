@@ -92,38 +92,7 @@ main {
     background-color: #555; 
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto; 
-}
 
-.box {
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s; 
-}
-
-.box:hover {
-    transform: translateY(-5px); 
-}
-
-.box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.box h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #333;
-}
 
 a {
     text-decoration: none;
