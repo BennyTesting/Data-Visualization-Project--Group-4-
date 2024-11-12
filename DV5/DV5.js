@@ -28,6 +28,7 @@ d3.csv("Living_With_HIV.csv").then(function(data) {
     updateYear("2017");
 });
 
+
 // Function to update the year selection and call the chart update
 function updateYear(year) {
     // Highlight the active button
@@ -117,7 +118,6 @@ function updateChart(year) {
     });
 }
 
-// Function to expand the clicked bubble
 function expandBubble(d) {
     // Check if the user is clicking the same bubble that's already expanded
     if (isExpanded && expandedNode === d) {
@@ -203,9 +203,10 @@ function expandBubble(d) {
             });
     }
 
-    // Show the lollipop chart for the expanded country
+    // Show the lollipop chart for the expanded country (e.g., Spain)
     updateLollipopChart(d);
 }
+
 // Function to reset all bubbles to their original state but not remove the lollipop chart
 function resetBubbles() {
     const svg = d3.select("svg");
@@ -235,11 +236,8 @@ function resetBubbles() {
     // Reset the expanded flag and expanded node (do not remove the lollipop chart)
     isExpanded = false;
     expandedNode = null;
-
-    // The lollipop chart will remain intact (no reset)
 }
 
-/// Function to update the lollipop chart for the selected year
 function updateLollipopChart(d) {
     const year = document.querySelector('.button.active').textContent;  // Get the active button year
     const svg = d3.select("svg");
@@ -259,6 +257,7 @@ function updateLollipopChart(d) {
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(lollipopData, d => d.value)])  // Domain based on the max value
         .range([0, width * 0.8]);  // Place the lollipop chart in the center horizontally
+        
 
     const yScale = d3.scaleBand()
         .domain(lollipopData.map(d => d.name))  // Countries as bands
@@ -269,13 +268,18 @@ function updateLollipopChart(d) {
     svg.selectAll(".lollipop-x-axis").remove();  // Remove previous axis
     svg.append("g")
         .attr("class", "lollipop-x-axis")
+        .transition()
+        .duration(500)
         .attr("transform", `translate(100, ${height - 60})`)  // Position the axis at the bottom
         .call(d3.axisBottom(xScale));
+        
 
     // Add y-axis for countries (vertical axis)
     svg.selectAll(".lollipop-y-axis").remove();  // Remove previous axis
     svg.append("g")
         .attr("class", "lollipop-y-axis")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(100, 0)")  // Position the axis on the left side
         .call(d3.axisLeft(yScale));
 
@@ -292,20 +296,26 @@ function updateLollipopChart(d) {
         .style("stroke-width", 2)
         .transition()  // Apply transition for animation
         .duration(2000)  // Duration of the transition (1 second)
-        .attr("x2", d => 100 + xScale(d.value));  // Animate the line to its real position
+        .transition()  // Apply transition for animation
+        .duration(2000)  // Duration of the transition (1 second)
+        .attr("x2", d => 100 + xScale(d.value))  // Animate the line to its real position
+        .style("opacity", 1);  // Dim all except the selected one
 
     // Add circles (lollipop heads) at the end of each line
     svg.selectAll(".lollipop-circle")
         .data(lollipopData)
         .enter().append("circle")
+        .style("fill", "#555")  // Set the fill color of the circle
         .attr("class", "lollipop-circle")
         .attr("cx", 100)  // Starting x position for the circles (leave space for the y-axis)
-        .attr("cy", d => yScale(d.name) + yScale.bandwidth() / 2)
-        .attr("r", 6)
-        .style("fill", "#555")  // Set the fill color of the circle
         .transition()  // Apply transition for animation
         .duration(2000)  // Duration of the transition (1 second)
-        .attr("cx", d => 100 + xScale(d.value));  // Animate the circle to its real position
+        .attr("cy", d => yScale(d.name) + yScale.bandwidth() / 2)
+        .attr("r", 6)
+        .transition()  // Apply transition for animation
+        .duration(2000)  // Duration of the transition (1 second)
+        .attr("cx", d => 100 + xScale(d.value))  // Animate the circle to its real position
+        .style("opacity", 1);  // Dim all except the selected one
 
     // Add labels (value of the country) next to the lollipop circles
     svg.selectAll(".lollipop-text")
@@ -320,9 +330,31 @@ function updateLollipopChart(d) {
         .text(d => d.value)  // Display the value (rounded to 1 decimal place)
         .attr("opacity", 0)  // Initially hide the text
         .transition()  // Apply transition for animation
-        .duration(3000)  // Duration of the transition (1 second)
+        .duration(2000)  // Duration of the transition (1 second)
+        .transition()  // Apply transition for animation
+        .duration(2000)  // Duration of the transition (1 second)  
         .attr("x", d => 100 + xScale(d.value) + 10)  // Animate text position to match the circle's x position
-        .attr("opacity", 1);  // Fade in the text while moving
+        .attr("opacity", 1);  // Dim all except the selected one
+
+    // Highlight the selected country's lollipop (make it brighter)
+    svg.selectAll(".lollipop-line")
+        .filter(d => d.name === expandedNode.data.name)  // Match the clicked country
+        .style("stroke", "#ff0000")  // Change the color of the line to highlight it
+
+    svg.selectAll(".lollipop-circle")
+        .filter(d => d.name === expandedNode.data.name)  // Match the clicked country
+        .style("fill", "#ff0000")  // Change the fill color of the circle to highlight it
+
+    svg.selectAll(".lollipop-text")
+        .filter(d => d.name === expandedNode.data.name)  // Match the clicked country
+        .style("fill", "#ff0000")  // Change the text color to highlight it
+        .style("font-weight", "bold");
+
+    // Highlight the corresponding y-axis label (the country)
+    svg.selectAll(".lollipop-y-axis text")
+        .filter(d => d === expandedNode.data.name)  // Match the y-axis text with the clicked country
+        .style("font-weight", "bold")
+        .style("fill", "#ff0000");  // Change the label color to red
 }
 
 // Function to hide the lollipop chart (before any bubble is clicked)
