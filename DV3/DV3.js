@@ -125,8 +125,8 @@ d3.csv("LineChart.csv").then(function(data) {
                 background-color: #fff;
                 border: 1px solid ${colorScale(country)};
                 border-radius: 4px;
-                padding: 3px;
-                font-size: 10px; /* Reduced font size */
+                padding: 3px 5px 3px 5px;
+                font-size: 9.5px; /* Reduced font size */
                 text-align: center;
                 box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
                 ">
