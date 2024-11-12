@@ -41,7 +41,7 @@ const detailXAxis = detailSvg.append("g")
 const detailYAxis = detailSvg.append("g")
     .attr("class", "y-axis");
 
-let currentYear = 2021;
+let currentYear = 2017;
 let currentHealthTopic = null; // Track selected health topic
 let currentSortOrder = "none"; // Default sort order is "none"
 
@@ -214,5 +214,11 @@ d3.csv("Disease_By_Year.csv").then(data => {
         showDetailChart(currentHealthTopic, currentYear, currentSortOrder);
     });
 
-    updateChart(2021); // Initial chart update
+        // Ensure the 2017 button is active on page load
+        d3.selectAll("button").classed("active", false); // Remove active class from all buttons
+        d3.select("button").filter(function() {
+            return d3.select(this).text() === "2017"; // Select the button with the text 2017
+        }).classed("active", true); // Add active class to the 2017 button
+
+    updateChart(2017); // Initial chart update
 });
